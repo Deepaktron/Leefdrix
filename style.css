@@ -389,6 +389,115 @@ h1 i {
     background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background on hover */
     opacity: 0.8; /* Slightly more visible on hover */
 }
+/* Ensure parent container uses flexbox for alignment */
+.parent-container {
+    display: flex;
+    justify-content: center; /* Center the slider horizontally */
+    overflow: hidden; /* Hide overflow to prevent horizontal scroll */
+    width: 100vw; /* Full viewport width */
+}
+
+/* Swiper container */
+.image-slider.swiper-container {
+    width: 100vw; /* Full viewport width */
+    height: 600px; /* Set height as needed */
+    overflow: hidden; /* Hide overflow to prevent slides from showing outside */
+    position: relative; /* Ensure positioning is relative for child elements */
+}
+
+/* Swiper wrapper */
+.swiper-wrapper {
+    display: flex;
+    width: 100%; /* Ensure wrapper spans the full width */
+    position: relative; /* Ensure relative positioning for absolute slides */
+    transform: translateX(0); /* Initial position of wrapper */
+}
+
+/* Swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    width: 100vw; /* Full viewport width for each slide */
+    height: 100%; /* Full height of the container */
+    position: absolute; /* Position slides absolutely */
+    right: 0; /* Start slides from the right edge of the container */
+    transform: translateX(100%); /* Start slides off-screen to the right */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+/* Active slide */
+.swiper-slide-active {
+    transform: translateX(0); /* Bring the active slide into view */
+}
+
+/* Images within slides */
+.swiper-slide img {
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Fit image height to container */
+    object-fit: cover; /* Cover the container without stretching */
+}
+
+
+/* Active bullet styling */
+.swiper-pagination-bullet-active {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%); /* Darker gradient for active dot */
+    transform: scale(1.3); /* Slightly enlarge the active dot */
+}
+
+/* Custom navigation buttons */
+.custom-prev-button, .custom-next-button {
+    width: 40px; /* Adjusted button width */
+    height: 40px; /* Adjusted button height */
+    background: #f0f0f0; /* Light grey background */
+    border: 1px solid #d0d0d0; /* Light grey border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Position relative to swiper container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer; /* Pointer cursor for clickable buttons */
+    z-index: 10; /* Ensure buttons are above other elements */
+    border-radius: 50%; /* Rounded button shape */
+    font-size: 20px; /* Font size for the arrows */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    opacity: 0.9; /* Slightly visible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Very subtle shadow for depth */
+}
+
+/* Arrow styles */
+.custom-arrow {
+    color: #333; /* Dark grey arrow color for contrast */
+    line-height: 0; /* Remove extra line height */
+}
+
+/* Button positioning */
+.custom-prev-button {
+    left: 10px; /* Position on the left side */
+}
+
+.custom-next-button {
+    right: 10px; /* Position on the right side */
+}
+
+/* Hover effect */
+.custom-prev-button:hover, .custom-next-button:hover {
+    background-color: #e0e0e0; /* Slightly darker grey background on hover */
+    border-color: #b0b0b0; /* Slightly darker grey border on hover */
+    opacity: 1; /* Fully visible on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Focus effect (for accessibility) */
+.custom-prev-button:focus, .custom-next-button:focus {
+    outline: 2px solid #333; /* Dark grey outline for focus */
+    outline-offset: 4px; /* Offset the outline from the button */
+}
+
+
 /* Slide content wrapper to align image and text */
 .slide-content {
     display: flex; /* Align items in a row */
@@ -397,21 +506,48 @@ h1 i {
     padding: 0 20px; /* Optional: Add padding for spacing */
 }
 
-/* Text within slide content */
-
-
 .slide-content h2 {
-    font-size: 140px; /* Use the same font size */
+    font-size: 145px; /* Use the same font size */
     color: black; /* Text color */
-    margin: 0; /* Remove default margin */
-    max-width: 60%; /* Adjust as needed */
+    margin: 0 0 40px 0; /* Increase bottom margin to 40px */
+    max-width: 120%; /* Adjust as needed */
     font-weight: 700;
     line-height: 0.9;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
 }
-
-.slide-subtext {
-    font-size: 14px; /* Smaller text size */
-    color: #666; /* Lighter text color */
-    margin: 0; /* Remove default margins */
+/* Slide description text */
+.slide-description {
+    font-size: 30px; /* Smaller text size */
+    color: black;
+    margin: 5px 0 15px; /* Space around the text */
+    margin-left: 5px; /* Move the button slightly to the right */
+    max-width: 80%; /* Adjust width if needed */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    line-height: 1.4; /* Line height for readability */
 }
+
+/* Shop Now button styling */
+.shop-now-button {
+    background: transparent; /* Transparent background */
+    border: 1px solid black; /* Black border */
+    color: black; /* Black text color */
+    padding: 10px 20px; /* Button padding */
+    margin-top: 10px; /* Space above the button */
+    margin-left: 5px; /* Move the button slightly to the right */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Hover effect */
+.shop-now-button:hover {
+    background-color: black; /* Black background on hover */
+    color: white; /* White text color on hover */
+}
+
+
+

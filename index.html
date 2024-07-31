@@ -93,36 +93,55 @@
                 <div class="swiper-slide">
                     <div class="slide-content">
                         <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
-                        <h2 class="slide-text">Fresh and Juicy Fruits</h2>
-                        <p class="slide-subtext">Small text description here</p>
+                        <div class="text-content">
+                            <h2 class="slide-text">Fresh and Juicy Fruits</h2>
+                            <p class="slide-description">Buy 1 Get 1 Free on All Fruits!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-content">
                         <img src="{{ url_for('static', filename='images/vegetables.png') }}" alt="Vegetables">
-                        <h2 class="slide-text">Organic Vegetables</h2>
-                        <p class="slide-subtext">Small text description here</p>
+                        <div class="text-content">
+                            <h2 class="slide-text">Organic Vegetables</h2>
+                            <p class="slide-description">Save 20% on Your First Order of Vegetables!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Bread">
+                        <div class="text-content">
+                            <h2 class="slide-text">Freshly Baked Bread</h2>
+                            <p class="slide-description">Get 2 Loaves for the Price of 1!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-content">
                         <img src="{{ url_for('static', filename='images/chocolate.png') }}" alt="Chocolate">
-                        <h2 class="slide-text">Delicious Chocolate</h2>
-                        <p class="slide-subtext">Small text description here</p>
+                        <div class="text-content">
+                            <h2 class="slide-text">Delicious Chocolate</h2>
+                            <p class="slide-description">25% Off on All Chocolate Bars!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-content">
                         <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
-                        <h2 class="slide-text">Sweet Sugarcane</h2>
-                        <p class="slide-subtext">Small text description here</p>
+                        <div class="text-content">
+                            <h2 class="slide-text">Sweet Sugarcane</h2>
+                            <p class="slide-description">Buy 3, Get 1 Free on Sugarcane!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
                     </div>
                 </div>
                 <!-- Add more slides as needed -->
             </div>
-    
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
     
             <!-- Add Navigation -->
             <button class="custom-prev-button" aria-label="Previous Slide">
@@ -133,6 +152,11 @@
             </button>
         </div>
     </div>
+    
+    
+    
+    
+    
     
     
     

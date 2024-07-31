@@ -1,0 +1,417 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    color: black; /* Default text color */
+}
+/* Main Content Styles */
+main {
+    position: relative; /* Ensure that children are positioned relative to the main container */
+    overflow: hidden; /* Hide overflow to avoid scrollbars during animation */
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px; /* Adjust this to fit your layout needs */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px 20px; /* Padding inside the container */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out items */
+}
+
+/* Header Styles */
+header {
+    margin: 0;
+    padding: 0;
+    background-color: #EEEDEB; /* Set the background color for the header */
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the elements */
+    padding: 10px; /* Add padding to the header */
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px; /* Font size */
+    color: black; /* Set text color */
+    font-weight: 700; /* Use bold weight for headings */
+    font-style: italic; /* Make the text italic */
+    margin-left: 30px; /* Adjust this value to move the heading towards the right */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center items */
+}
+
+h1 i {
+    margin-left: 10px; /* Add space between text and icon */
+    font-size: 24px; /* Size of the icon */
+    color: green; /* Icon color set to teal */
+}
+
+.highlight-d {
+    color: green; /* Specific color for the "d" */
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #FF5722; /* Background color */
+    color: #fff; /* White text color for better contrast */
+    padding: 1px 0; /* Minimal padding around the bar */
+    text-align: center; /* Center text alignment */
+    border-bottom: 1px solid #ddd; /* Light border at the bottom */
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+/* Below Header Bar Styles */
+.below-header-bar {
+    background-color: #ffffff; /* White background color */
+    border-bottom: 1px solid #ddd; /* Light border at the bottom */
+}
+
+.below-header-bar .container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out items */
+    padding: 0px 0; /* Reduce padding to decrease height */
+}
+
+/* Category Menu Styles */
+.category-menu {
+    position: relative; /* Position relative to position dropdown */
+}
+
+.category-button {
+    background-color: #FF5722; /* Teal color for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Remove border */
+    padding: 6px 11px; /* Padding inside the button */
+    border-radius: 3px; /* Fully rounded corners */
+    cursor: pointer;
+    font-size: 15px; /* Font size for the button text */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    margin-left:-130px ;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    margin-left: 3px; /* Space between text and arrow */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* Dropdown Arrow Rotation when Dropdown is Open */
+.category-menu.open .dropdown-arrow {
+    transform: rotate(180deg); /* Rotate arrow upwards */
+}
+
+/* Category Dropdown Styles */
+.category-dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Absolute positioning relative to the button */
+    top: 150%; /* Position below the button */
+    left: 0;
+    background-color: #ffffff; /* White background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 3px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 200px; /* Width of the dropdown */
+    z-index: 10; /* Ensure dropdown is above other elements */
+    margin-left:-130px ;
+}
+
+/* Show Dropdown when Category Menu is Open */
+.category-menu.open .category-dropdown {
+    display: block; /* Show the dropdown */
+}
+
+.category-dropdown a {
+    display: block; /* Block display for dropdown items */
+    padding: 10px 15px; /* Padding inside the links */
+    color: #333; /* Dark text color */
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.category-dropdown a:hover {
+    background-color: #f4f4f4; /* Light background color on hover */
+}
+
+/* Nav Bar Styles */
+.nav-bar {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+    justify-content: flex-start; /* Align items to the start */
+    gap: 15px; /* Space between items */
+    padding: 10px 0; /* Padding around the items */
+    font-size: 15px; /* Font size for navigation items */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    flex-grow: 1; /* Allows nav bar to take up remaining space */
+    margin-left: 130px;
+}
+
+/* Move "Recently Viewed" link to the right */
+.nav-bar .recently-viewed {
+    margin-left: auto; /* Pushes the link to the right */
+    margin-right: -140px; /* Additional space to the right */
+}
+
+.nav-bar a {
+    color: #333; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 15px; /* Padding around the links */
+    border-radius: 30px; /* Fully rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.nav-bar a:hover {
+    color: #FF5722; /* Color on hover */
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9; /* Light background color for the search bar */
+    border-radius: 50px; /* Fully rounded corners */
+    border: 1px solid #ddd; /* Light border color */
+    padding: 5px; /* Padding around the content */
+    width: 100%; /* Full width of its container */
+    max-width: 800px; /* Limit maximum width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth shadow and transform transitions */
+}
+
+.search-input {
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Padding inside the input */
+    font-size: 16px; /* Font size for the input */
+    background-color: #fff; /* Background color for the input */
+    border-radius: 50px 0 0 50px; /* Rounded left corners */
+    outline: none;
+    flex-grow: 1; /* Input takes up remaining space */
+}
+
+.search-button {
+    background-color: #FF5722; /* Teal color for the button */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 0 50px 50px 0; /* Rounded right corners */
+    cursor: pointer;
+    color: white; /* Text color for the button */
+    font-size: 16px; /* Font size for the button text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.search-button i {
+    font-size: 18px; /* Adjusted icon size for prominence */
+}
+
+/* Icons Styles */
+.icons {
+    display: flex;
+    gap: 22px; /* Space between buttons */
+    align-items: center;
+    margin-right: 32px; /* Move buttons further left */
+    position: relative; /* Ensure parent is positioned for absolute children */
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Transparent background for icons */
+    color: black; /* Default icon color */
+    padding: 4px 8px; /* Standard padding for all buttons */
+    border: none;
+    font-size: 22px; /* Font size for icons */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition */
+    white-space: nowrap; /* Prevent text from wrapping */
+    cursor: pointer;
+    position: relative; /* Positioning context for badge */
+}
+
+.btn i {
+    margin-right: 0; /* No margin needed between icon and text */
+}
+
+/* Badge Styles */
+.btn .badge {
+    position: absolute;
+    top: -5px; /* Position badge above the button */
+    right: -5px; /* Position badge to the right of the button */
+    background-color: #FF5722; /* Badge color */
+    color: #FFF; /* Badge text color */
+    width: 20px; /* Width of the badge */
+    height: 20px; /* Height of the badge */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Font size for the badge number */
+    font-weight: 700; /* Bold text for better visibility */
+}
+
+/* Hover state for badge */
+.btn:hover .badge {
+    background-color: black; /* Optional: change badge color on hover */
+}
+
+/* Hover state for icon */
+.btn:hover {
+    color: #FF5722; /* Icon color on hover */
+}
+
+
+
+
+
+/* Ensure parent container uses flexbox for alignment */
+.parent-container {
+    display: flex;
+    justify-content: center; /* Center the slider horizontally */
+    overflow: hidden; /* Hide overflow to prevent horizontal scroll */
+    width: 100vw; /* Full viewport width */
+}
+
+/* Swiper container */
+.image-slider.swiper-container {
+    width: 100vw; /* Full viewport width */
+    height: 600px; /* Set height as needed */
+    overflow: hidden; /* Hide overflow to prevent slides from showing outside */
+    position: relative; /* Ensure positioning is relative for child elements */
+}
+
+/* Swiper wrapper */
+.swiper-wrapper {
+    display: flex;
+    width: 100%; /* Ensure wrapper spans the full width */
+    position: relative; /* Ensure relative positioning for absolute slides */
+    transform: translateX(0); /* Initial position of wrapper */
+}
+
+/* Swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    width: 100vw; /* Full viewport width for each slide */
+    height: 100%; /* Full height of the container */
+    position: absolute; /* Position slides absolutely */
+    right: 0; /* Start slides from the right edge of the container */
+    transform: translateX(100%); /* Start slides off-screen to the right */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+/* Active slide */
+.swiper-slide-active {
+    transform: translateX(0); /* Bring the active slide into view */
+}
+
+/* Images within slides */
+.swiper-slide img {
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Fit image height to container */
+    object-fit: cover; /* Cover the container without stretching */
+}
+
+/* Swiper pagination */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px; /* Position pagination dots at the bottom */
+    width: 100%; /* Full width */
+    text-align: center; /* Center pagination dots */
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.7); /* Light color for inactive dots */
+    border-radius: 50%; /* Make bullets round */
+    width: 12px; /* Bullet width */
+    height: 12px; /* Bullet height */
+    margin: 0 4px; /* Spacing between bullets */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white; /* Color for active dot */
+}
+
+/* Custom navigation buttons */
+.custom-prev-button, .custom-next-button {
+    width: 50px; /* Button width */
+    height: 50px; /* Button height */
+    background: rgba(0, 0, 0, 0.2); /* More transparent background */
+    border: none; /* Remove border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Position relative to swiper container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer; /* Pointer cursor for clickable buttons */
+    z-index: 10; /* Ensure buttons are above other elements */
+    border-radius: 50%; /* Rounded button shape */
+    font-size: 24px; /* Font size for the arrows */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0.5; /* Less visible */
+}
+
+/* Arrow styles */
+.custom-arrow {
+    color: white; /* Arrow color */
+    line-height: 0; /* Remove extra line height */
+}
+
+/* Button positioning */
+.custom-prev-button {
+    left: 10px; /* Position on the left side */
+}
+
+.custom-next-button {
+    right: 10px; /* Position on the right side */
+}
+
+/* Hover effect */
+.custom-prev-button:hover, .custom-next-button:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background on hover */
+    opacity: 0.8; /* Slightly more visible on hover */
+}
+/* Slide content wrapper to align image and text */
+.slide-content {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Full height of the swiper slide */
+    padding: 0 20px; /* Optional: Add padding for spacing */
+}
+
+/* Text within slide content */
+
+
+.slide-content h2 {
+    font-size: 140px; /* Use the same font size */
+    color: black; /* Text color */
+    margin: 0; /* Remove default margin */
+    max-width: 60%; /* Adjust as needed */
+    font-weight: 700;
+    line-height: 0.9;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+}
+
+.slide-subtext {
+    font-size: 14px; /* Smaller text size */
+    color: #666; /* Lighter text color */
+    margin: 0; /* Remove default margins */
+}

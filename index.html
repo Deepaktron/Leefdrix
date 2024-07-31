@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leefdrix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="top-bar">
+        <!-- Content for the top bar (e.g., notification, contact info, etc.) -->
+        <p>Welcome to Leefdrix! Enjoy our latest products and offers.</p>
+    </div>
+    
+    <header>
+        <div class="header-inner">
+            <h1>
+                Leef<span class="highlight-d">d</span>rix 
+                <i class="fas fa-leaf"></i> <!-- Leaf icon added here -->
+            </h1>            
+            <form class="search-form" action="#" method="get">
+                <input type="text" placeholder="Search our store" class="search-input">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <div class="icons">
+                <a href="#favourites" class="btn favourites-btn" title="Favourites">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span> <!-- Default badge value -->
+                </a>
+                <a href="#cart" class="btn cart-btn" title="View Cart">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="badge">0</span> <!-- Default badge value -->
+                </a>
+            </div>
+            
+        </div>
+    </header>
+    <div class="below-header-bar">
+        <div class="container">
+            <div class="category-menu">
+                <button class="category-button">
+                    <i class="fas fa-bars"></i> <!-- Existing Hamburger Icon -->
+                    <span>All Categories</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i> <!-- Downward Arrow Icon -->
+                </button>
+                <div class="category-dropdown">
+                    <a href="#electronics">Electronics</a>
+                    <a href="#fashion">Fashion</a>
+                    <a href="#home">Home & Garden</a>
+                    <a href="#toys">Toys</a>
+                    <a href="#sports">Sports</a>
+                </div>
+            </div>
+            
+            <div class="nav-bar">
+                <a href="#deals" class="nav-link deals">
+                    <i class="fas fa-tag"></i> Deals Today
+                </a>
+                <a href="#special" class="nav-link special">
+                    <i class="fas fa-star"></i> Special Prices
+                </a>
+                <a href="#fresh">Fresh</a>
+                <a href="#frozen">Frozen</a>
+                <a href="#demos">Demos</a>
+                <a href="#shop">Shop</a>
+                <a href="#blog">Blog</a>
+                <a href="#pages">Pages</a>
+                <a href="#brand">Brand</a>
+                <a href="#recently-viewed" class="nav-link recently-viewed">
+                    <i class="fas fa-history"></i> Recently Viewed
+                </a>        
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="parent-container">
+        <div class="image-slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+                        <h2 class="slide-text">Fresh and Juicy Fruits</h2>
+                        <p class="slide-subtext">Small text description here</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/vegetables.png') }}" alt="Vegetables">
+                        <h2 class="slide-text">Organic Vegetables</h2>
+                        <p class="slide-subtext">Small text description here</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/chocolate.png') }}" alt="Chocolate">
+                        <h2 class="slide-text">Delicious Chocolate</h2>
+                        <p class="slide-subtext">Small text description here</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
+                        <h2 class="slide-text">Sweet Sugarcane</h2>
+                        <p class="slide-subtext">Small text description here</p>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+    
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+    
+            <!-- Add Navigation -->
+            <button class="custom-prev-button" aria-label="Previous Slide">
+                <span class="custom-arrow">&#10094;</span>
+            </button>
+            <button class="custom-next-button" aria-label="Next Slide">
+                <span class="custom-arrow">&#10095;</span>
+            </button>
+        </div>
+    </div>
+    
+    
+    
+      
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

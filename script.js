@@ -29,3 +29,7 @@ var swiper = new Swiper('.image-slider', {
         disableOnInteraction: false, // Continue autoplay after user interactions
     },
 });
+
+
+
+

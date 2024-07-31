@@ -450,8 +450,8 @@ h1 i {
 .custom-prev-button, .custom-next-button {
     width: 40px; /* Adjusted button width */
     height: 40px; /* Adjusted button height */
-    background: #f0f0f0; /* Light grey background */
-    border: 1px solid #d0d0d0; /* Light grey border */
+    background: rgba(255, 255, 255, 0.5); /* Transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Transparent border */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -463,13 +463,13 @@ h1 i {
     border-radius: 50%; /* Rounded button shape */
     font-size: 20px; /* Font size for the arrows */
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    opacity: 0.9; /* Slightly visible */
+    opacity: 0.7; /* Slightly visible */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Very subtle shadow for depth */
 }
 
 /* Arrow styles */
 .custom-arrow {
-    color: #333; /* Dark grey arrow color for contrast */
+    color: rgba(0, 0, 0, 0.8); /* Dark grey arrow color for contrast */
     line-height: 0; /* Remove extra line height */
 }
 
@@ -484,8 +484,8 @@ h1 i {
 
 /* Hover effect */
 .custom-prev-button:hover, .custom-next-button:hover {
-    background-color: #e0e0e0; /* Slightly darker grey background on hover */
-    border-color: #b0b0b0; /* Slightly darker grey border on hover */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly darker transparent background on hover */
+    border-color: rgba(255, 255, 255, 1); /* Fully opaque border on hover */
     opacity: 1; /* Fully visible on hover */
     transform: scale(1.05); /* Slight scale effect on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
@@ -493,7 +493,7 @@ h1 i {
 
 /* Focus effect (for accessibility) */
 .custom-prev-button:focus, .custom-next-button:focus {
-    outline: 2px solid #333; /* Dark grey outline for focus */
+    outline: 2px solid rgba(0, 0, 0, 0.8); /* Dark grey outline for focus */
     outline-offset: 4px; /* Offset the outline from the button */
 }
 
@@ -518,7 +518,7 @@ h1 i {
 /* Slide description text */
 .slide-description {
     font-size: 30px; /* Smaller text size */
-    color: black;
+    color: #666;
     margin: 5px 0 15px; /* Space around the text */
     margin-left: 5px; /* Move the button slightly to the right */
     max-width: 80%; /* Adjust width if needed */
@@ -551,3 +551,69 @@ h1 i {
 
 
 
+
+
+
+
+/* Square card */
+.square-cards-container {
+    display: flex;
+    justify-content: center; /* Center align the cards horizontally */
+    gap: 20px; /* Space between the cards */
+    margin-top: 20px; /* Add some top margin if needed */
+}
+
+.square-card-container {
+    display: flex;
+    flex-direction: column; /* Stack the card and label vertically */
+    align-items: center; /* Center align items horizontally */
+    position: relative; /* Position relative to use absolute positioning for text */
+}
+
+.square-card {
+    width: 220px; /* Adjust the width to make the cards larger */
+    height: 220px; /* Adjust the height to match the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9; /* Initial background color for the label */
+    border: 0.5px solid #ddd; /* Optional: add a light border for better visibility */
+    box-shadow: none; /* Remove any shadow */
+    position: relative; /* Position relative for text positioning */
+    overflow: hidden; /* Hide any overflow text */
+}
+
+.square-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensure the image covers the card */
+    position: relative; /* Ensure image is on top of text */
+    z-index: 1; /* Ensure image is above text */
+}
+
+
+.card-label {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+    font-size: 14px;
+    margin-top: 10px; /* Space between the card and the label */
+    padding: 10px;
+    background-color: #f9f9f9; /* Initial background color for the label */
+    color: black; /* Initial text color */
+    border: 0.5px solid #ddd; /* Border for the label */
+    text-align: center; /* Center text inside the label */
+    width: 100%; /* Full width of the card */
+    max-width: 200px; /* Ensure label is not wider than the card */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition for background, color, and transform */
+}
+
+.card-label:hover {
+    background-color: black; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.card-label:active {
+    background-color: black; /* Even darker background when clicked */
+    color: white; /* Text color remains white on click */
+}

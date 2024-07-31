@@ -122,6 +122,17 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-content">
+                        <img src="{{ url_for('static', filename='images/meat.png') }}" alt="Meat">
+                        <div class="text-content">
+                            <h2 class="slide-text">Fresh Meat</h2>
+                            <p class="slide-description">Get 15% Off on All Meat Cuts!</p> <!-- Added paragraph text -->
+                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="slide-content">
                         <img src="{{ url_for('static', filename='images/chocolate.png') }}" alt="Chocolate">
                         <div class="text-content">
                             <h2 class="slide-text">Delicious Chocolate</h2>
@@ -152,16 +163,52 @@
             </button>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-      
 
+
+    
+    <div class="square-cards-container">
+        <div class="square-card-container">
+            <div class="square-card">
+                <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+            </div>
+            <div class="card-label" onclick="handleCategoryClick('Fruits')">Fruits</div>
+        </div>
+        <div class="square-card-container">
+            <div class="square-card">
+                <img src="{{ url_for('static', filename='images/vegetables.png') }}" alt="Vegetables">
+            </div>
+            <div class="card-label" onclick="handleCategoryClick('Vegetables')">Vegetables</div>
+        </div>
+        <div class="square-card-container">
+            <div class="square-card">
+                <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Bread">
+            </div>
+            <div class="card-label" onclick="handleCategoryClick('Bread')">Bread</div>
+        </div>
+        <div class="square-card-container">
+            <div class="square-card">
+                <img src="{{ url_for('static', filename='images/meat.png') }}" alt="Meat">
+            </div>
+            <div class="card-label" onclick="handleCategoryClick('Meat')">Meat</div>
+        </div>
+        <div class="square-card-container">
+            <div class="square-card">
+                <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
+            </div>
+            <div class="card-label" onclick="handleCategoryClick('Sugarcane')">Sugarcane</div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <br><br><br><br><br><br><br>    
+    
+
+    
+
+
+    
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

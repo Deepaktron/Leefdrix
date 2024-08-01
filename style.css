@@ -278,117 +278,7 @@ h1 i {
 
 
 
-/* Ensure parent container uses flexbox for alignment */
-.parent-container {
-    display: flex;
-    justify-content: center; /* Center the slider horizontally */
-    overflow: hidden; /* Hide overflow to prevent horizontal scroll */
-    width: 100vw; /* Full viewport width */
-}
-
-/* Swiper container */
-.image-slider.swiper-container {
-    width: 100vw; /* Full viewport width */
-    height: 600px; /* Set height as needed */
-    overflow: hidden; /* Hide overflow to prevent slides from showing outside */
-    position: relative; /* Ensure positioning is relative for child elements */
-}
-
-/* Swiper wrapper */
-.swiper-wrapper {
-    display: flex;
-    width: 100%; /* Ensure wrapper spans the full width */
-    position: relative; /* Ensure relative positioning for absolute slides */
-    transform: translateX(0); /* Initial position of wrapper */
-}
-
-/* Swiper slides */
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0; /* Prevent slides from shrinking */
-    width: 100vw; /* Full viewport width for each slide */
-    height: 100%; /* Full height of the container */
-    position: absolute; /* Position slides absolutely */
-    right: 0; /* Start slides from the right edge of the container */
-    transform: translateX(100%); /* Start slides off-screen to the right */
-    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
-}
-
-/* Active slide */
-.swiper-slide-active {
-    transform: translateX(0); /* Bring the active slide into view */
-}
-
-/* Images within slides */
-.swiper-slide img {
-    width: auto; /* Maintain aspect ratio */
-    height: 100%; /* Fit image height to container */
-    object-fit: cover; /* Cover the container without stretching */
-}
-
-/* Swiper pagination */
-.swiper-pagination {
-    position: absolute;
-    bottom: 10px; /* Position pagination dots at the bottom */
-    width: 100%; /* Full width */
-    text-align: center; /* Center pagination dots */
-}
-
-/* Swiper pagination bullets */
-.swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.7); /* Light color for inactive dots */
-    border-radius: 50%; /* Make bullets round */
-    width: 12px; /* Bullet width */
-    height: 12px; /* Bullet height */
-    margin: 0 4px; /* Spacing between bullets */
-}
-
-.swiper-pagination-bullet-active {
-    background-color: white; /* Color for active dot */
-}
-
-/* Custom navigation buttons */
-.custom-prev-button, .custom-next-button {
-    width: 50px; /* Button width */
-    height: 50px; /* Button height */
-    background: rgba(0, 0, 0, 0.2); /* More transparent background */
-    border: none; /* Remove border */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute; /* Position relative to swiper container */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Center vertically */
-    cursor: pointer; /* Pointer cursor for clickable buttons */
-    z-index: 10; /* Ensure buttons are above other elements */
-    border-radius: 50%; /* Rounded button shape */
-    font-size: 24px; /* Font size for the arrows */
-    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0.5; /* Less visible */
-}
-
-/* Arrow styles */
-.custom-arrow {
-    color: white; /* Arrow color */
-    line-height: 0; /* Remove extra line height */
-}
-
-/* Button positioning */
-.custom-prev-button {
-    left: 10px; /* Position on the left side */
-}
-
-.custom-next-button {
-    right: 10px; /* Position on the right side */
-}
-
-/* Hover effect */
-.custom-prev-button:hover, .custom-next-button:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background on hover */
-    opacity: 0.8; /* Slightly more visible on hover */
-}
+/*_____________Body Styling______________*/
 /* Ensure parent container uses flexbox for alignment */
 .parent-container {
     display: flex;
@@ -576,8 +466,8 @@ h1 i {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9; /* Initial background color for the label */
-    border: 0.5px solid #ddd; /* Optional: add a light border for better visibility */
+    background-color: #f8f9fa; /* Initial background color for the label */
+    border: 0.5px solid #e9ecef; /* Optional: add a light border for better visibility */
     box-shadow: none; /* Remove any shadow */
     position: relative; /* Position relative for text positioning */
     overflow: hidden; /* Hide any overflow text */
@@ -597,9 +487,9 @@ h1 i {
     font-size: 14px;
     margin-top: 10px; /* Space between the card and the label */
     padding: 10px;
-    background-color: #f9f9f9; /* Initial background color for the label */
+    background-color: #f8f9fa; /* Initial background color for the label */
     color: black; /* Initial text color */
-    border: 0.5px solid #ddd; /* Border for the label */
+    border: 0.5px solid #e9ecef; /* Border for the label */
     text-align: center; /* Center text inside the label */
     width: 100%; /* Full width of the card */
     max-width: 200px; /* Ensure label is not wider than the card */
@@ -617,3 +507,93 @@ h1 i {
     background-color: black; /* Even darker background when clicked */
     color: white; /* Text color remains white on click */
 }
+
+
+
+
+
+/*center Ad Image*/
+.centered-image-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    margin-top: 12%; /* Adjust the top margin as needed */
+}
+
+.centered-image-container img {
+    max-width: 30%; /* Ensure the image is responsive */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
+
+
+
+/* Product Grids */
+.grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 2px; /* Increase vertical gap to 20px and reduce horizontal gap to 5px */
+    padding: 120px;
+}
+
+.product-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card {
+    background: #f8f9fa;
+    border: 0.5px solid #e9ecef;
+    padding: 10px;
+    position: relative;
+    width: 250px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card .discount {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: red;
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.product-details {
+    width: 100%;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.product-details .name, .product-details .price {
+    font-size: 14px;
+    color: black;
+}
+
+.product-details .price {
+    font-size: 14px;
+    color: green;
+}
+
+.product-details .price .original-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-left: 5px;
+}
+
+
+
+

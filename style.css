@@ -424,7 +424,7 @@ h1 i {
     padding: 10px 20px; /* Button padding */
     margin-top: 10px; /* Space above the button */
     margin-left: 5px; /* Move the button slightly to the right */
-    border-radius: 3px; /* Rounded corners */
+    border-radius: 1px; /* Rounded corners */
     font-size: 16px; /* Font size */
     font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
@@ -438,7 +438,6 @@ h1 i {
     background-color: black; /* Black background on hover */
     color: white; /* White text color on hover */
 }
-
 
 
 
@@ -481,11 +480,11 @@ h1 i {
     z-index: 1; /* Ensure image is above text */
 }
 
-
 .card-label {
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
     font-size: 14px;
     margin-top: 10px; /* Space between the card and the label */
+    margin-bottom: 10%;
     padding: 10px;
     background-color: #f8f9fa; /* Initial background color for the label */
     color: black; /* Initial text color */
@@ -508,97 +507,20 @@ h1 i {
     color: white; /* Text color remains white on click */
 }
 
-
-
-
-
-
-
-
-
-/* Product Grids */
-.grid-container {
-    display: flex;
-    justify-content: center;
+/* Wrapper for Square Card Section to Parallax Section Spacing */
+.square-card-parallax-spacing {
+    margin-bottom: 5%; /* Adjusted space between square card section and parallax section */
 }
-.section-title {
-    font-size: 24px; /* Adjust font size as needed */
-    font-weight: 700; /* Bold text */
-    color: #333; /* Dark grey color */
-    margin-bottom: -50%; /* Space below the title */
-    text-align: center; /* Center align the text */
-    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Use the system font stack */
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 60px 2px; /* Increase vertical gap to 20px and reduce horizontal gap to 5px */
-    padding: 100px;
-}
-
-.product-card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.product-card {
-    background: #f8f9fa;
-    border: 0.5px solid #e9ecef;
-    padding: 10px;
-    position: relative;
-    width: 250px;
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
-}
-
-.product-card .discount {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: red;
-    color: #fff;
-    padding: 5px;
-    font-size: 14px;
-}
-
-.product-details {
-    width: 100%;
-    text-align: left;
-    margin-left: 60px;
-    margin-top: 5px;
-}
-
-.product-details .name, .product-details .price {
-    font-size: 14px;
-    color: black;
-}
-
-.product-details .price {
-    font-size: 14px;
-    color: green;
-}
-
-.product-details .price .original-price {
-    text-decoration: line-through;
-    color: #777;
-    margin-left: 5px;
-}
-
-
 
 /* General Parallax Section Styling */
 .parallax-section {
-    margin-top: 6%;
+    margin-top: 0; /* Reduced margin-top to bring title and container closer */
+    margin-bottom: 5%; /* Space below parallax section */
     display: flex;
     align-items: center;
-    height: 60vh; /* Adjusted height for the section */
+    height: 85vh; /* Adjusted height for the section */
     overflow: hidden; /* Hide overflow content */
+    background-color: #f8f9fa;
     position: relative;
 }
 
@@ -607,8 +529,9 @@ h1 i {
     flex: 0 0 auto; /* Do not grow or shrink */
     width: 40%; /* Increased width for a larger image */
     text-align: center;
-    margin-top: -6%;
+    margin-top: -2%;
     margin-right: 40px; /* Increased space between image and text containers */
+    margin-left: 5%;
     display: flex;
     align-items: center; /* Center image vertically */
 }
@@ -730,13 +653,105 @@ h1 i {
     overflow: hidden; /* Hide overflow text */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
 }
+
 /* Heading Styling */
 .parallax-section .section-heading {
     font-size: 2rem; /* Size of the heading */
     font-weight: 700; /* Bold heading */
     color: #333; /* Heading color */
     text-align: center; /* Center the heading */
-    margin-bottom: 20px; /* Space between heading and content */
+    margin-bottom: 2%; /* Adjusted space between heading and content */
 }
 
+/* Product Grids */
 
+/* Wrapper for Product Title to Product Grid Spacing */
+.product-title-grid-spacing {
+    margin-top: 5%; /* Space before the product grid */
+    margin-bottom: 10%; /* Adjusted space between product section title and product grid */
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 30px; /* Adjust font size as needed */
+    font-weight: 700; /* Bold text */
+    color: #333; /* Dark grey color */
+    margin-top: 4%; /* Slightly increased top margin for more space */
+    margin-bottom: 5%; /* Increased bottom margin for more space */
+    text-align: center; /* Center align the text */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Use the system font stack */
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 2px; /* Adjusted vertical and horizontal gaps for even spacing */
+    padding: 0 50px; /* Adjusted padding to bring grid closer */
+}
+
+/* Product Card Container Styling */
+.product-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Product Card Styling */
+.product-card {
+    background: #f8f9fa;
+    border: 0.5px solid #e9ecef;
+    padding: 10px;
+    position: relative;
+    width: 250px;
+}
+
+/* Product Card Image Styling */
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Discount Badge Styling */
+.product-card .discount {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: red;
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Product Details Styling */
+.product-details {
+    width: 100%;
+    text-align: left;
+    margin-left: 85px; /* Adjusted margin-left for alignment */
+    margin-top: 5px;
+}
+
+/* Product Name and Price Styling */
+.product-details .name,
+.product-details .price {
+    font-size: 14px;
+    color: black;
+}
+
+/* Product Price Styling */
+.product-details .price {
+    color: green;
+}
+
+/* Original Price Styling */
+.product-details .price .original-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-left: 5px;
+}

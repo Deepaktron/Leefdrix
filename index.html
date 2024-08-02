@@ -10,10 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
 </head>
 <body>
     <div class="top-bar">
@@ -202,9 +201,16 @@
         </div>
     </div>
 
+
+    <!-- Section Title Above Parallax Section -->
+    <div class="grid-container">
+        <h2 class="section-title">Exquisite Services</h2>
+    </div>
+
+    <!-- Parallax Section -->
     <div class="parallax-section">
         <div class="image-container">
-            <img src="{{ url_for('static', filename='images/ad.png') }}" alt="parallax">
+            <img src="{{ url_for('static', filename='images/ad1.png') }}" alt="parallax">
         </div>
         <div class="text-container-wrapper">
             <div class="text-row top-row">
@@ -249,18 +255,10 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
 
-    <!--product Grids-->
-    <div class="grid-container">
-        <h2 class="section-title">Discover Products</h2>
-    </div>
+    <!-- Product Grids -->
+<div class="product-title-grid-spacing">
+    <h2 class="section-title">Discover Products</h2>
     <div class="product-grid">
         <div class="product-card-container">
             <div class="product-card">
@@ -343,7 +341,8 @@
             </div>
         </div>
     </div>
-    
+</div>
+
     
 
     
@@ -357,6 +356,5 @@
 
 
     
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script></body>
 </html>

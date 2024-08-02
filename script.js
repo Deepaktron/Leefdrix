@@ -32,4 +32,51 @@ var swiper = new Swiper('.image-slider', {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const texts = document.querySelectorAll('.parallax-text');
+    let currentIndex = 0;
+    let isAnimating = false; // Prevents overlapping animations
 
+    const showNextText = () => {
+        if (currentIndex < texts.length) {
+            const text = texts[currentIndex];
+            text.classList.add('visible');
+            text.classList.remove('hidden');
+            currentIndex++;
+            setTimeout(showNextText, 600); // Wait for the slide-in animation to complete before showing the next text
+        }
+    };
+
+    const hideText = () => {
+        if (currentIndex > 0) {
+            const text = texts[currentIndex - 1];
+            text.classList.add('hidden');
+            text.classList.remove('visible');
+            currentIndex--;
+            setTimeout(hideText, 600); // Wait for the slide-out animation to complete before hiding the next text
+        }
+    };
+
+    const handleScroll = () => {
+        const viewportHeight = window.innerHeight;
+        const section = document.querySelector('.parallax-section');
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < viewportHeight * 0.75 && !isAnimating) {
+            if (currentIndex === 0) {
+                isAnimating = true;
+                showNextText();
+                isAnimating = false;
+            }
+        } else {
+            if (currentIndex > 0 && !isAnimating) {
+                isAnimating = true;
+                hideText();
+                isAnimating = false;
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+});

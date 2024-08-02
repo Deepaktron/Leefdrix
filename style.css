@@ -512,18 +512,6 @@ h1 i {
 
 
 
-/*center Ad Image*/
-.centered-image-container {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    margin-top: 12%; /* Adjust the top margin as needed */
-}
-
-.centered-image-container img {
-    max-width: 30%; /* Ensure the image is responsive */
-    height: auto; /* Maintain the aspect ratio */
-}
-
 
 
 
@@ -533,12 +521,20 @@ h1 i {
     display: flex;
     justify-content: center;
 }
+.section-title {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: 700; /* Bold text */
+    color: #333; /* Dark grey color */
+    margin-bottom: -50%; /* Space below the title */
+    text-align: center; /* Center align the text */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Use the system font stack */
+}
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 60px 2px; /* Increase vertical gap to 20px and reduce horizontal gap to 5px */
-    padding: 120px;
+    padding: 100px;
 }
 
 .product-card-container {
@@ -574,7 +570,7 @@ h1 i {
 .product-details {
     width: 100%;
     text-align: left;
-    margin-left: 50px;
+    margin-left: 60px;
     margin-top: 5px;
 }
 
@@ -596,4 +592,102 @@ h1 i {
 
 
 
+
+
+
+
+/* General Parallax Section Styling */
+.parallax-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Adjusted height for the section */
+    overflow: hidden; /* Hide overflow content */
+    position: relative;
+}
+
+/* Image Container */
+.parallax-section .image-container {
+    flex: 1;
+    text-align: center;
+    order: 1; /* Image on the right */
+}
+
+.parallax-section .image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Maintain image aspect ratio */
+}
+
+/* Text Container */
+.parallax-section .text-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    order: 2; /* Text on the left */
+    display: flex;
+    flex-direction: column; /* Stack text elements vertically */
+    gap: 1rem; /* Space between text items */
+}
+
+/* Parallax Text Styling */
+.parallax-section .parallax-text {
+    opacity: 0;
+    transform: translateX(100%); /* Start position off screen to the right */
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition */
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+/* Visible Parallax Text */
+.parallax-section .parallax-text.visible {
+    opacity: 1;
+    transform: translateX(0); /* Slide in to original position */
+}
+
+/* Hidden Parallax Text */
+.parallax-section .parallax-text.hidden {
+    opacity: 0;
+    transform: translateX(100%); /* Slide out to the right */
+}
+
+/* Icon Styling */
+.parallax-section .icon {
+    font-size: 2rem; /* Icon size */
+    margin-right: 1rem; /* Space between icon and text */
+    background-color: #ddd; /* Circular background color */
+    border-radius: 50%; /* Circle shape */
+    padding: 0.5rem; /* Padding inside the circle */
+    color: #333; /* Icon color */
+    display: inline-flex; /* Align icon with text */
+    justify-content: center; /* Center icon in circle */
+    align-items: center; /* Center icon in circle */
+}
+
+/* Text Content Styling */
+.parallax-section .text-content {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+}
+
+/* Main Text Styling */
+.parallax-section .main-text {
+    font-size: 1.2rem; /* Main text size */
+    font-weight: 700; /* Bold text */
+    color: #333; /* Main text color */
+    margin-bottom: 0.5rem; /* Space below the main text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+/* Sub Text Styling */
+.parallax-section .sub-text {
+    font-size: 0.9rem; /* Sub text size */
+    color: #666; /* Sub text color */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
 

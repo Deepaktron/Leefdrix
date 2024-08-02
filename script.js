@@ -33,27 +33,35 @@ var swiper = new Swiper('.image-slider', {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = document.querySelectorAll('.parallax-text');
-    let currentIndex = 0;
-    let isAnimating = false; // Prevents overlapping animations
+    const texts = [
+        document.querySelector('.left-top .parallax-text'),
+        document.querySelector('.left-bottom .parallax-text'),
+        document.querySelector('.right-top .parallax-text'),
+        document.querySelector('.right-bottom .parallax-text')
+    ];
 
-    const showNextText = () => {
-        if (currentIndex < texts.length) {
-            const text = texts[currentIndex];
-            text.classList.add('visible');
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    const showTextSequentially = (index) => {
+        if (index < texts.length) {
+            const text = texts[index];
             text.classList.remove('hidden');
-            currentIndex++;
-            setTimeout(showNextText, 600); // Wait for the slide-in animation to complete before showing the next text
+            text.classList.add('visible');
+            setTimeout(() => showTextSequentially(index + 1), 600); // Show the next text after a delay
+        } else {
+            isAnimating = false; // Reset animation state after the sequence completes
         }
     };
 
-    const hideText = () => {
-        if (currentIndex > 0) {
-            const text = texts[currentIndex - 1];
-            text.classList.add('hidden');
+    const hideTextSequentially = (index) => {
+        if (index >= 0) {
+            const text = texts[index];
             text.classList.remove('visible');
-            currentIndex--;
-            setTimeout(hideText, 600); // Wait for the slide-out animation to complete before hiding the next text
+            text.classList.add('hidden');
+            setTimeout(() => hideTextSequentially(index - 1), 600); // Hide the previous text after a delay
+        } else {
+            isAnimating = false; // Reset animation state after the sequence completes
         }
     };
 
@@ -65,18 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sectionTop < viewportHeight * 0.75 && !isAnimating) {
             if (currentIndex === 0) {
                 isAnimating = true;
-                showNextText();
-                isAnimating = false;
+                showTextSequentially(currentIndex);
+                currentIndex = texts.length; // Prevents re-triggering the animation
             }
-        } else {
-            if (currentIndex > 0 && !isAnimating) {
-                isAnimating = true;
-                hideText();
-                isAnimating = false;
-            }
+        } else if (currentIndex === texts.length && !isAnimating) {
+            isAnimating = true;
+            hideTextSequentially(currentIndex - 1);
+            currentIndex = 0; // Reset index for potential future animations
         }
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 });
+
+

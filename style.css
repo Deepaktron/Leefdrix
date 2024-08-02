@@ -25,7 +25,7 @@ main {
 header {
     margin: 0;
     padding: 0;
-    background-color: #EEEDEB; /* Set the background color for the header */
+    background-color: white; /* Set the background color for the header */
 }
 
 .header-inner {
@@ -592,52 +592,92 @@ h1 i {
 
 
 
-
-
-
-
 /* General Parallax Section Styling */
 .parallax-section {
+    margin-top: 6%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 70vh; /* Adjusted height for the section */
+    height: 60vh; /* Adjusted height for the section */
     overflow: hidden; /* Hide overflow content */
     position: relative;
 }
 
 /* Image Container */
 .parallax-section .image-container {
-    flex: 1;
+    flex: 0 0 auto; /* Do not grow or shrink */
+    width: 40%; /* Increased width for a larger image */
     text-align: center;
-    order: 1; /* Image on the right */
+    margin-top: -6%;
+    margin-right: 40px; /* Increased space between image and text containers */
+    display: flex;
+    align-items: center; /* Center image vertically */
 }
 
+/* Ensure image stays centered vertically */
 .parallax-section .image-container img {
     max-width: 100%;
     height: auto;
     object-fit: cover; /* Maintain image aspect ratio */
 }
 
-/* Text Container */
-.parallax-section .text-container {
+/* Text Container Wrapper */
+.parallax-section .text-container-wrapper {
     flex: 1;
-    padding: 20px;
-    text-align: left;
-    order: 2; /* Text on the left */
     display: flex;
-    flex-direction: column; /* Stack text elements vertically */
-    gap: 1rem; /* Space between text items */
+    flex-direction: column; /* Stack text rows vertically */
+    justify-content: center; /* Center text rows vertically */
+    height: 100%; /* Ensure wrapper takes full height */
+}
+
+/* Text Rows */
+.parallax-section .text-row {
+    display: flex;
+    justify-content: space-between; /* Space between left and right text containers */
+    margin-bottom: 50px; /* Increased vertical space between text rows */
+}
+
+/* Text Containers */
+.parallax-section .text-container {
+    display: flex;
+    align-items: center;
+    width: 48%; /* Adjust width to fit the layout */
+}
+
+/* Positioning text containers to align with the horizontal center of the image */
+.parallax-section .left-top,
+.parallax-section .left-bottom,
+.parallax-section .right-top,
+.parallax-section .right-bottom {
+    margin-left: 0;
+    margin-right: 0;
+    /* Adjust vertical alignment with the image */
+    position: relative;
+}
+
+/* Adjustments for top and bottom text alignment */
+.parallax-section .left-top {
+    margin-top: 0; /* Ensure no extra margin at the top */
+}
+
+.parallax-section .left-bottom {
+    margin-top: 20px; /* Increased vertical gap from top text */
+}
+
+.parallax-section .right-top {
+    margin-top: 0; /* Align with the top text */
+}
+
+.parallax-section .right-bottom {
+    margin-top: 20px; /* Increased vertical gap from top text */
 }
 
 /* Parallax Text Styling */
 .parallax-section .parallax-text {
     opacity: 0;
-    transform: translateX(100%); /* Start position off screen to the right */
+    transform: translateX(100%); /* Default position off screen */
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition */
     display: flex;
     align-items: center;
-    margin: 1rem 0;
 }
 
 /* Visible Parallax Text */
@@ -690,4 +730,13 @@ h1 i {
     overflow: hidden; /* Hide overflow text */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
 }
+/* Heading Styling */
+.parallax-section .section-heading {
+    font-size: 2rem; /* Size of the heading */
+    font-weight: 700; /* Bold heading */
+    color: #333; /* Heading color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space between heading and content */
+}
+
 

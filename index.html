@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leefdrix</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Import Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -165,6 +165,9 @@
     </div>
 
 
+
+    
+
     
     <div class="square-cards-container">
         <div class="square-card-container">
@@ -200,41 +203,54 @@
     </div>
 
     <div class="parallax-section">
-        <div class="text-container">
-            <div class="parallax-text hidden">
-                <i class="fas fa-headset icon"></i>
-                <div class="text-content">
-                    <span class="main-text">Quality Support</span>
-                    <span class="sub-text">24/7 customer service available</span>
-                </div>
-            </div>
-            <div class="parallax-text hidden">
-                <i class="fas fa-shipping-fast icon"></i>
-                <div class="text-content">
-                    <span class="main-text">Free Delivery</span>
-                    <span class="sub-text">Orders from all items</span>
-                </div>
-            </div>
-            <div class="parallax-text hidden">
-                <i class="fas fa-envelope-open-text icon"></i>
-                <div class="text-content">
-                    <span class="main-text">Join Newsletter</span>
-                    <span class="sub-text">20% off by subscribing</span>
-                </div>
-            </div>
-            <div class="parallax-text hidden">
-                <i class="fas fa-undo-alt icon"></i>
-                <div class="text-content">
-                    <span class="main-text">Return & Refund</span>
-                    <span class="sub-text">Money back guarantee</span>
-                </div>
-            </div>
-        </div>
         <div class="image-container">
-
             <img src="{{ url_for('static', filename='images/ad.png') }}" alt="parallax">
         </div>
+        <div class="text-container-wrapper">
+            <div class="text-row top-row">
+                <div class="text-container left-top">
+                    <div class="parallax-text hidden">
+                        <i class="fas fa-headset icon"></i>
+                        <div class="text-content">
+                            <span class="main-text">Quality Support</span>
+                            <span class="sub-text">24/7 customer service available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container right-top">
+                    <div class="parallax-text hidden">
+                        <i class="fas fa-shipping-fast icon"></i>
+                        <div class="text-content">
+                            <span class="main-text">Free Delivery</span>
+                            <span class="sub-text">Orders from all items</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-row bottom-row">
+                <div class="text-container left-bottom">
+                    <div class="parallax-text hidden">
+                        <i class="fas fa-envelope-open-text icon"></i>
+                        <div class="text-content">
+                            <span class="main-text">Join Newsletter</span>
+                            <span class="sub-text">20% off by subscribing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container right-bottom">
+                    <div class="parallax-text hidden">
+                        <i class="fas fa-undo-alt icon"></i>
+                        <div class="text-content">
+                            <span class="main-text">Return & Refund</span>
+                            <span class="sub-text">Money back guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
     
     
     

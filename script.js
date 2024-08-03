@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// main sliding in start
 var swiper = new Swiper('.image-slider', {
     slidesPerView: 1, // Show one slide at a time
     spaceBetween: 0, // No space between slides
@@ -32,6 +32,75 @@ var swiper = new Swiper('.image-slider', {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('card-slider');
+    const cardContainers = Array.from(slider.children);
+    const cardWidth = cardContainers[0].offsetWidth;
+    const numCards = cardContainers.length;
+
+    // Duplicate the cards to create an infinite loop effect
+    cardContainers.forEach(card => slider.appendChild(card.cloneNode(true)));
+    slider.style.width = `${cardWidth * cardContainers.length * 2}px`; // Set the width of the slider
+
+    let currentIndex = 0;
+
+    function slide() {
+        currentIndex++;
+        if (currentIndex >= numCards) {
+            slider.style.transition = 'none'; // Disable transition for instant snap back
+            slider.style.transform = `translateX(0)`;
+            currentIndex = 0;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                slider.style.transform = `translateX(-${cardWidth}px)`;
+            }, 20); // Short delay to ensure the transition is applied correctly
+        } else {
+            slider.style.transition = 'transform 0.5s ease'; // Enable transition
+            slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+    }
+
+    function goToSlide(index) {
+        if (index >= numCards) {
+            index = 0;
+        }
+        if (index < 0) {
+            index = numCards - 1;
+        }
+        slider.style.transition = 'transform 0.5s ease'; // Enable transition
+        slider.style.transform = `translateX(-${index * cardWidth}px)`;
+        currentIndex = index;
+    }
+
+    document.getElementById('next-button').addEventListener('click', () => {
+        slide();
+    });
+
+    document.getElementById('prev-button').addEventListener('click', () => {
+        if (currentIndex <= 0) {
+            currentIndex = numCards - 1;
+            slider.style.transition = 'none'; // Disable transition for instant snap back
+            slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                slider.style.transform = `translateX(-${(currentIndex - 1) * cardWidth}px)`;
+            }, 20);
+        } else {
+            goToSlide(currentIndex - 1);
+        }
+    });
+
+    setInterval(slide, 2000); // Automatic slide every 3 seconds
+});
+
+
+
+
+
+
+
+// parallax functions
 document.addEventListener('DOMContentLoaded', function() {
     const texts = [
         document.querySelector('.left-top .parallax-text'),
@@ -88,3 +157,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slide = document.querySelector('.featured-products-slide');
+    const groups = document.querySelectorAll('.featured-products-group');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slideWidth = slide.offsetWidth / groups.length;
+        slide.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    prevButton.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+    });
+
+    nextButton.addEventListener('click', function() {
+        if (currentIndex < groups.length - 1) {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+    });
+
+    // Initialize display
+    showSlide(currentIndex);
+});

@@ -442,7 +442,6 @@ h1 i {
 
 
 
-
 .carousel-wrapper {
     overflow: hidden; /* Hide overflow to only show visible part of the carousel */
     width: 95%; /* Adjust the width as needed (e.g., 80% of the parent container) */
@@ -452,7 +451,6 @@ h1 i {
     display: flex; /* Align buttons and slider horizontally */
     align-items: center; /* Center items vertically */
 }
-
 
 .square-cards-container {
     display: flex;
@@ -536,14 +534,6 @@ h1 i {
 
 .carousel-button.next {
     right: 10px;
-}
-#card-slider {
-    display: flex;
-    transition: transform 0.5s ease; /* Smooth sliding effect */    
-}
-
-.square-card-container {
-    flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
 }
 
 
@@ -709,8 +699,11 @@ h1 i {
     margin-bottom: 2%; /* Adjusted space between heading and content */
 }
 
-/* Product Grids */
 
+
+
+
+/* Product Grids */
 /* Wrapper for Product Title to Product Grid Spacing */
 .product-title-grid-spacing {
     margin-top: 5%; /* Space before the product grid */
@@ -825,12 +818,13 @@ h1 i {
 .featured-products-wrapper {
     overflow: hidden;
     width: 100%;
+    position: relative;
 }
 
 .featured-products-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 200%; /* 2 groups, 100% each */
+    width: 300%; /* 3 groups, 100% each */
 }
 
 .featured-products-group {
@@ -879,7 +873,7 @@ h1 i {
 }
 
 button.prev, button.next {
-    background-color: #f0ad4e;
+    background-color: #333;
     border: none;
     color: white;
     padding: 10px;

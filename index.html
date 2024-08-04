@@ -140,16 +140,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
-                        <div class="text-content">
-                            <h2 class="slide-text">Sweet Sugarcane</h2>
-                            <p class="slide-description">Buy 3, Get 1 Free on Sugarcane!</p> <!-- Added paragraph text -->
-                            <button class="shop-now-button">Shop Now</button> <!-- Added button -->
-                        </div>
-                    </div>
-                </div>
+                            
+                
                 <!-- Add more slides as needed -->
             </div>
     
@@ -187,6 +179,12 @@
                 </div>
                 <div class="square-card-container">
                     <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Dairy')">Dairy</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
                         <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Bread">
                     </div>
                     <div class="card-label" onclick="handleCategoryClick('Bread')">Bread</div>
@@ -199,15 +197,9 @@
                 </div>
                 <div class="square-card-container">
                     <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
+                        <img src="{{ url_for('static', filename='images/seafood.png') }}" alt="Seafood">
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Sugarcane')">Sugarcane</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Dairy')">Dairy</div>
+                    <div class="card-label" onclick="handleCategoryClick('Seafood')">Seafood</div>
                 </div>
                 <div class="square-card-container">
                     <div class="square-card">
@@ -217,23 +209,53 @@
                 </div>
                 <div class="square-card-container">
                     <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/drinks.png') }}" alt="Drinks">
+                        <img src="{{ url_for('static', filename='images/juice.png') }}" alt="Juice">
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Drinks')">Drinks</div>
+                    <div class="card-label" onclick="handleCategoryClick('Juice')">Organic Juice</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Frozen Foods')">Frozen Foods</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/beverages.png') }}" alt="Beverages">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Beverages')">Beverages</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Condiments')">Condiments</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/dessert.png') }}" alt="Dessert">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Dessert')">Dessert</div>
+                </div>
+                <div class="square-card-container">
+                    <div class="square-card">
+                        <img src="{{ url_for('static', filename='images/sugarcane.png') }}" alt="Sugarcane">
+                    </div>
+                    <div class="card-label" onclick="handleCategoryClick('Sugarcane')">Sugarcane</div>
                 </div>
             </div>
         </div>
         <button class="custom-prev-button" id="prev-button">&#10094;</button>
         <button class="custom-next-button" id="next-button">&#10095;</button>
     </div>
-
+    
     
 
 
     <div class="featured-products-section">
         <h2 class="section-title">Featured Products</h2>
         <div class="featured-products-container">
-            <button class="prev">&#8249;</button> <!-- Previous button -->
+            <button class="prev">&#10094;</button> <!-- Previous button -->
             <div class="featured-products-wrapper">
                 <div class="featured-products-slide">
                     <!-- Slide 1: First 6 products -->
@@ -326,12 +348,58 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <!-- Slide 3: Another 6 products -->
+                    <div class="featured-products-group">
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/papaya.png') }}" alt="Papaya">
+                            <div class="product-info">
+                                <p class="product-name">Fresh papaya</p>
+                                <p class="product-price">€25,00</p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/peach.png') }}" alt="Peach">
+                            <div class="product-info">
+                                <p class="product-name">Fresh peach</p>
+                                <p class="product-price">€20,00</p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/plum.png') }}" alt="Plum">
+                            <div class="product-info">
+                                <p class="product-name">Fresh plum</p>
+                                <p class="product-price">€22,00</p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/pear.png') }}" alt="Pear">
+                            <div class="product-info">
+                                <p class="product-name">Fresh pear</p>
+                                <p class="product-price">€18,00</p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/cherry.png') }}" alt="Cherry">
+                            <div class="product-info">
+                                <p class="product-name">Fresh cherry</p>
+                                <p class="product-price">€30,00</p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="Kiwi">
+                            <div class="product-info">
+                                <p class="product-name">Fresh kiwi</p>
+                                <p class="product-price">€25,00</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="next">&#8250;</button> <!-- Next button -->
+            <button class="next">&#10095;</button> <!-- Next button -->
+            
         </div>
     </div>
+    
     
     
     

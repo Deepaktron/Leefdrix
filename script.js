@@ -42,21 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Duplicate the cards to create an infinite loop effect
     cardContainers.forEach(card => slider.appendChild(card.cloneNode(true)));
     slider.style.width = `${cardWidth * cardContainers.length * 2}px`; // Set the width of the slider
+    slider.style.transition = 'transform 0.5s ease'; // Smooth transition for sliding
 
     let currentIndex = 0;
+    const cardsToSlide = 3; // Number of cards to slide at a time
+    const slideDuration = 3000; // Duration for automatic sliding (3 seconds)
+    let slidingInterval;
 
     function slide() {
-        currentIndex++;
+        currentIndex += cardsToSlide;
         if (currentIndex >= numCards) {
             slider.style.transition = 'none'; // Disable transition for instant snap back
             slider.style.transform = `translateX(0)`;
             currentIndex = 0;
             setTimeout(() => {
                 slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                slider.style.transform = `translateX(-${cardWidth}px)`;
+                slider.style.transform = `translateX(-${cardWidth * cardsToSlide}px)`; // Adjust for the first visible card
             }, 20); // Short delay to ensure the transition is applied correctly
         } else {
-            slider.style.transition = 'transform 0.5s ease'; // Enable transition
             slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
         }
     }
@@ -73,26 +76,39 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex = index;
     }
 
+    function startSliding() {
+        slidingInterval = setInterval(slide, slideDuration); // Automatic slide every specified duration
+    }
+
+    function stopSliding() {
+        clearInterval(slidingInterval); // Stop the automatic sliding
+    }
+
     document.getElementById('next-button').addEventListener('click', () => {
+        stopSliding(); // Stop automatic sliding on manual navigation
         slide();
+        startSliding(); // Restart automatic sliding after manual navigation
     });
 
     document.getElementById('prev-button').addEventListener('click', () => {
+        stopSliding(); // Stop automatic sliding on manual navigation
         if (currentIndex <= 0) {
-            currentIndex = numCards - 1;
+            currentIndex = numCards - cardsToSlide;
             slider.style.transition = 'none'; // Disable transition for instant snap back
             slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
             setTimeout(() => {
                 slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                slider.style.transform = `translateX(-${(currentIndex - 1) * cardWidth}px)`;
+                slider.style.transform = `translateX(-${(currentIndex - cardsToSlide) * cardWidth}px)`; // Adjust for the previous visible cards
             }, 20);
         } else {
-            goToSlide(currentIndex - 1);
+            goToSlide(currentIndex - cardsToSlide); // Adjust to slide back by the specified number
         }
+        startSliding(); // Restart automatic sliding after manual navigation
     });
 
-    setInterval(slide, 2000); // Automatic slide every 3 seconds
+    startSliding(); // Start the automatic sliding when the page loads
 });
+
 
 
 
@@ -196,3 +212,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize display
     showSlide(currentIndex);
 });
+

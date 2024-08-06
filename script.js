@@ -33,16 +33,18 @@ var swiper = new Swiper('.image-slider', {
 
 
 
+
+
+// card sliding animations
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('card-slider');
     const cardContainers = Array.from(slider.children);
     const cardWidth = cardContainers[0].offsetWidth;
     const numCards = cardContainers.length;
-
+    
     // Duplicate the cards to create an infinite loop effect
     cardContainers.forEach(card => slider.appendChild(card.cloneNode(true)));
     slider.style.width = `${cardWidth * cardContainers.length * 2}px`; // Set the width of the slider
-    slider.style.transition = 'transform 0.5s ease'; // Smooth transition for sliding
 
     let currentIndex = 0;
     const cardsToSlide = 3; // Number of cards to slide at a time
@@ -108,9 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startSliding(); // Start the automatic sliding when the page loads
 });
-
-
-
 
 
 
@@ -188,11 +187,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.querySelector('.next');
     const slide = document.querySelector('.featured-products-slide');
     const groups = document.querySelectorAll('.featured-products-group');
+    const paginationDots = document.querySelector('.pagination-dots');
     let currentIndex = 0;
+
+    // Create pagination dots
+    groups.forEach((_, index) => {
+        const dot = document.createElement('span');
+        if (index === 0) dot.classList.add('active'); // Set the first dot as active
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
+        });
+        paginationDots.appendChild(dot);
+    });
 
     function showSlide(index) {
         const slideWidth = slide.offsetWidth / groups.length;
         slide.style.transform = `translateX(-${index * slideWidth}px)`;
+        
+        // Update active dot
+        paginationDots.querySelectorAll('span').forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === index);
+        });
     }
 
     prevButton.addEventListener('click', function() {
@@ -212,4 +228,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize display
     showSlide(currentIndex);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 

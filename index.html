@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
@@ -433,6 +435,52 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 5: Additional trending products -->
+                    <div class="featured-products-group">
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
+                            <div class="product-info">
+                                <p class="product-name">Condiments (200g)</p>
+                                <p class="product-price">Rs 150 <span class="original-price">Rs 180</span></p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
+                            <div class="product-info">
+                                <p class="product-name">Dairy Products (1L)</p>
+                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/Dessert.png') }}" alt="Dessert">
+                            <div class="product-info">
+                                <p class="product-name">Dessert (500g)</p>
+                                <p class="product-price">Rs 250 <span class="original-price">Rs 300</span></p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/fish.png') }}" alt="Fish">
+                            <div class="product-info">
+                                <p class="product-name">Fresh Fish (1kg)</p>
+                                <p class="product-price">Rs 400 <span class="original-price">Rs 500</span></p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
+                            <div class="product-info">
+                                <p class="product-name">Frozen Foods (1kg)</p>
+                                <p class="product-price">Rs 350 <span class="original-price">Rs 450</span></p>
+                            </div>
+                        </div>
+                        <div class="featured-product">
+                            <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+                            <div class="product-info">
+                                <p class="product-name">Mixed Fruits (1kg)</p>
+                                <p class="product-price">Rs 150 <span class="original-price">Rs 200</span></p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -488,11 +536,11 @@
             <div class="text-row bottom-row">
                 <div class="text-container left-bottom">
                     <div class="parallax-text hidden">
-                        <i class="fas fa-envelope-open-text icon"></i>
+                        <i class="fas fa-bullhorn icon"></i> <!-- Updated icon -->
                         <div class="text-content">
-                            <span class="main-text">Join Newsletter</span>
-                            <span class="sub-text">20% off by subscribing</span>
-                        </div>
+                            <span class="main-text">Stay Updated with Us</span> <!-- Updated text -->
+                            <span class="sub-text">Enjoy a 20% discount on your first purchase</span> <!-- Updated text -->
+                        </div>                        
                     </div>
                 </div>
                 <div class="text-container right-bottom">
@@ -698,7 +746,91 @@
     
     
 
+   <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+    
+    
+
+   <div class="testimonial-section">
+    <h2 class="section-title">What Our Customers Are Saying</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-wrapper">
+            <div class="testimonial-group">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <div class="testimonial-category">For Product Quality</div>
+                    <div class="testimonial-review">
+                        The product exceeded my expectations. The build quality is top-notch and the design is both elegant and functional. Will definitely recommend it to others!
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By julia_smith</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-category">For Customer Service</div>
+                    <div class="testimonial-review">
+                        Exceptional service from start to finish. The team was very attentive and handled all my queries promptly. A pleasure to work with!
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By mike_jones</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★☆☆</div>
+                    <div class="testimonial-category">For Delivery Time</div>
+                    <div class="testimonial-review">
+                        The delivery was a bit delayed, but the product quality made up for it. Good overall experience, though there is room for improvement in shipping speed.
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By emily_brown</div>
+                </div>
+            </div>
+            <div class="testimonial-group">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-category">For Value for Money</div>
+                    <div class="testimonial-review">
+                        Outstanding value for money! The product is priced very reasonably for its features and quality. I would definitely purchase again.
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By robert_white</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <div class="testimonial-category">For Ease of Use</div>
+                    <div class="testimonial-review">
+                        The product is user-friendly and easy to set up. I appreciated the clear instructions and intuitive interface. Overall, a great experience.
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By anna_green</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-category">For Overall Satisfaction</div>
+                    <div class="testimonial-review">
+                        Completely satisfied with the purchase. The product performs excellently and the customer service was very responsive. Highly recommended!
+                    </div>
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-name">By daniel_young</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     
 
     

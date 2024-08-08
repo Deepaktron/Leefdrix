@@ -562,7 +562,7 @@ h1 i {
     margin-bottom: 5%; /* Space below parallax section */
     display: flex;
     align-items: center;
-    height: 85vh; /* Adjusted height for the section */
+    height: 40vh; /* Reduced height for a more compact section */
     overflow: hidden; /* Hide overflow content */
     background-color: #f8f9fa;
     position: relative;
@@ -571,10 +571,10 @@ h1 i {
 /* Image Container */
 .parallax-section .image-container {
     flex: 0 0 auto; /* Do not grow or shrink */
-    width: 40%; /* Increased width for a larger image */
+    width: 30%; /* Reduced width for a smaller image */
     text-align: center;
-    margin-top: -2%;
-    margin-right: 40px; /* Increased space between image and text containers */
+    margin-top: 0; /* Reset margin-top to align with the text container */
+    margin-right: 20px; /* Reduced space between image and text containers */
     margin-left: 5%;
     display: flex;
     align-items: center; /* Center image vertically */
@@ -582,7 +582,7 @@ h1 i {
 
 /* Ensure image stays centered vertically */
 .parallax-section .image-container img {
-    max-width: 100%;
+    max-width: 93%;
     height: auto;
     object-fit: cover; /* Maintain image aspect ratio */
 }
@@ -594,20 +594,23 @@ h1 i {
     flex-direction: column; /* Stack text rows vertically */
     justify-content: center; /* Center text rows vertically */
     height: 100%; /* Ensure wrapper takes full height */
+    align-items: center; /* Center text horizontally within the wrapper */
 }
 
 /* Text Rows */
 .parallax-section .text-row {
     display: flex;
     justify-content: space-between; /* Space between left and right text containers */
-    margin-bottom: 50px; /* Increased vertical space between text rows */
+    margin-bottom: 30px; /* Reduced vertical space between text rows */
+    width: 100%; /* Ensure text rows take full width of the wrapper */
+    align-items: center; /* Center text rows vertically */
 }
 
 /* Text Containers */
 .parallax-section .text-container {
     display: flex;
     align-items: center;
-    width: 50%; /* Adjust width to fit the layout */
+    width: 45%; /* Adjust width to fit the layout */
 }
 
 /* Positioning text containers to align with the horizontal center of the image */
@@ -627,7 +630,7 @@ h1 i {
 }
 
 .parallax-section .left-bottom {
-    margin-top: 20px; /* Increased vertical gap from top text */
+    margin-top: 10px; /* Reduced vertical gap from top text */
 }
 
 .parallax-section .right-top {
@@ -635,7 +638,7 @@ h1 i {
 }
 
 .parallax-section .right-bottom {
-    margin-top: 20px; /* Increased vertical gap from top text */
+    margin-top: 10px; /* Reduced vertical gap from top text */
 }
 
 /* Parallax Text Styling */
@@ -661,11 +664,11 @@ h1 i {
 
 /* Icon Styling */
 .parallax-section .icon {
-    font-size: 2rem; /* Icon size */
-    margin-right: 1rem; /* Space between icon and text */
+    font-size: 1.5rem; /* Reduced icon size */
+    margin-right: 0.75rem; /* Reduced space between icon and text */
     background-color: #ddd; /* Circular background color */
     border-radius: 50%; /* Circle shape */
-    padding: 0.5rem; /* Padding inside the circle */
+    padding: 0.4rem; /* Padding inside the circle */
     color: #333; /* Icon color */
     display: inline-flex; /* Align icon with text */
     justify-content: center; /* Center icon in circle */
@@ -680,10 +683,10 @@ h1 i {
 
 /* Main Text Styling */
 .parallax-section .main-text {
-    font-size: 1.2rem; /* Main text size */
+    font-size: 1rem; /* Reduced main text size */
     font-weight: 700; /* Bold text */
     color: #333; /* Main text color */
-    margin-bottom: 0.5rem; /* Space below the main text */
+    margin-bottom: 0.3rem; /* Reduced space below the main text */
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow text */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
@@ -691,7 +694,7 @@ h1 i {
 
 /* Sub Text Styling */
 .parallax-section .sub-text {
-    font-size: 0.9rem; /* Sub text size */
+    font-size: 0.8rem; /* Reduced sub text size */
     color: #666; /* Sub text color */
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow text */
@@ -700,12 +703,13 @@ h1 i {
 
 /* Heading Styling */
 .parallax-section .section-heading {
-    font-size: 2rem; /* Size of the heading */
+    font-size: 1.5rem; /* Reduced size of the heading */
     font-weight: 700; /* Bold heading */
     color: #333; /* Heading color */
     text-align: center; /* Center the heading */
-    margin-bottom: 2%; /* Adjusted space between heading and content */
+    margin-bottom: 1.5%; /* Reduced space between heading and content */
 }
+
 
 
 
@@ -839,7 +843,7 @@ h1 i {
 .featured-products-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%; /* 4 groups, 100% each */
+    width: 500%; /* 4 groups, 100% each */
 }
 
 .featured-products-group {
@@ -938,4 +942,87 @@ button.next {
 
 
 
+/* Testimonial Section */
+.testimonial-section {
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* Apply the system font stack */
+}
 
+
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-wrapper {
+    width: 100%;
+    max-width: 1200px; /* Adjust max-width as needed */
+}
+
+.testimonial-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* 3 columns */
+    height: 300px; /* Fixed height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between elements */
+    text-align: left;
+    position: relative;
+}
+
+.testimonial-stars {
+    font-size: 1.5em;
+    color: #FF5722;
+}
+
+.testimonial-category {
+    font-size: 1.1em;
+    color: black;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.testimonial-review {
+    font-size: 1em;
+    flex-grow: 1;
+    margin: 10px 0;
+}
+
+.testimonial-icon {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px; /* Space below the icon */
+}
+
+.testimonial-icon i {
+    font-size: 40px; /* Size of the icon */
+    color: #FF5722; /* Icon color */
+    border: 1px solid #333; /* Border similar to the original image */
+    padding: 5px; /* Padding inside the icon */
+    background-color: #fff; /* Background color */
+    position: relative;
+    top: -4px; /* Adjust the value to move the icon up */
+}
+
+.testimonial-name {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}

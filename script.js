@@ -1,3 +1,193 @@
+// Product data - Replace the image paths and product details accordingly
+const products = [
+    // Trending Products
+    {
+        name: 'Juicy Red Apples',
+        image: 'static/images/apple.png',
+        price: 'Rs 90.00',
+        originalPrice: 'Rs 112.50',
+        availability: '50 in stock',
+        description: 'Fresh and juicy red apples, perfect for a healthy snack.',
+        sku: '123464',
+    },
+    {
+        name: 'Exotic Fresh Coconuts',
+        image: 'static/images/coconut.png',
+        price: 'Rs 260.00',
+        originalPrice: 'Rs 305.00',
+        availability: '30 in stock',
+        description: 'Delicious and fresh coconuts, straight from the tropics.',
+        sku: '123465',
+    },
+    {
+        name: 'Sweet Seedless Grapes',
+        image: 'static/images/grapes.png',
+        price: 'Rs 225.00',
+        originalPrice: 'Rs 250.00',
+        availability: '40 in stock',
+        description: 'Sweet and juicy seedless grapes, ideal for snacking.',
+        sku: '123466',
+    },
+    {
+        name: 'Tropical Ripe Guavas',
+        image: 'static/images/guava.png',
+        price: 'Rs 320.00',
+        originalPrice: 'Rs 425.00',
+        availability: '20 in stock',
+        description: 'Tropical guavas with a sweet and tangy flavor.',
+        sku: '123467',
+    },
+    {
+        name: 'Succulent Fresh Shrimp',
+        image: 'static/images/shrimp.png',
+        price: 'Rs 750.00',
+        originalPrice: 'Rs 1,000.00',
+        availability: '15 in stock',
+        description: 'Fresh and succulent shrimp, great for seafood dishes.',
+        sku: '123468',
+    },
+    {
+        name: 'Premium Fresh Fish',
+        image: 'static/images/fish.png',
+        price: 'Rs 900.00',
+        originalPrice: 'Rs 1,200.00',
+        availability: '25 in stock',
+        description: 'High-quality fresh fish, perfect for your meals.',
+        sku: '123469',
+    },
+    {
+        name: 'Tender Chicken Breast',
+        image: 'static/images/chicken.png',
+        price: 'Rs 600.00',
+        originalPrice: 'Rs 800.00',
+        availability: '35 in stock',
+        description: 'Tender and juicy chicken breast, ideal for cooking.',
+        sku: '123470',
+    },
+    {
+        name: 'Flavorful Mutton Chops',
+        image: 'static/images/mutton.png',
+        price: 'Rs 1,200.00',
+        originalPrice: 'Rs 1,600.00',
+        availability: '10 in stock',
+        description: 'Flavorful mutton chops, great for grilling and stews.',
+        sku: '123471',
+    },
+    // Fresh Arrivals
+    {
+        name: 'Creamy Avocados',
+        image: 'static/images/avocado.png',
+        price: 'Rs 80.00',
+        originalPrice: 'Rs 100.00',
+        availability: '12 in stock',
+        description: 'Fresh creamy avocados, perfect for a healthy snack or addition to your meals.',
+        sku: '123456',
+    },
+    {
+        name: 'Tropical Pineapples',
+        image: 'static/images/pineapple.png',
+        price: 'Rs 170.00',
+        originalPrice: 'Rs 200.00',
+        availability: '10 in stock',
+        description: 'Juicy pineapples sourced directly from tropical regions.',
+        sku: '123457',
+    },
+    {
+        name: 'Fresh Peaches',
+        image: 'static/images/peach.png',
+        price: 'Rs 135.00',
+        originalPrice: 'Rs 150.00',
+        availability: '8 in stock',
+        description: 'Sweet and juicy peaches, harvested at the peak of ripeness.',
+        sku: '123458',
+    },
+    {
+        name: 'Zesty Kiwis',
+        image: 'static/images/kiwi.png',
+        price: 'Rs 75.00',
+        originalPrice: 'Rs 100.00',
+        availability: '20 in stock',
+        description: 'Tangy and fresh kiwis, full of vitamins and flavor.',
+        sku: '123459',
+    },
+    {
+        name: 'Fresh Mussels',
+        image: 'static/images/mussel.png',
+        price: 'Rs 350.00',
+        originalPrice: 'Rs 500.00',
+        availability: '15 in stock',
+        description: 'Fresh mussels, perfect for seafood lovers and gourmet dishes.',
+    },
+    {
+        name: 'Rich Dark Chocolate',
+        image: 'static/images/chocolate.png',
+        price: 'Rs 225.00',
+        originalPrice: 'Rs 300.00',
+        availability: '50 in stock',
+        description: 'Luxurious dark chocolate with a rich and intense flavor.',
+        sku: '123461',
+    },
+    {
+        name: 'Crunchy Almonds',
+        image: 'static/images/almond.png',
+        price: 'Rs 450.00',
+        originalPrice: 'Rs 600.00',
+        availability: '30 in stock',
+        description: 'Crunchy and delicious almonds, perfect for snacking or cooking.',
+        sku: '123462',
+    },
+    {
+        name: 'Sweet Bananas',
+        image: 'static/images/banana.png',
+        price: 'Rs 60.00',
+        originalPrice: 'Rs 80.00',
+        availability: '25 in stock',
+        description: 'Naturally sweet bananas, ideal for a quick snack or breakfast.',
+        sku: '123463',
+    },
+];
+
+// Function to open the product widget with the selected product's details
+function openProductWidget(index) {
+    const widget = document.getElementById('product-widget');
+    const product = products[index];
+
+    // Populate the widget with product details
+    document.getElementById('widget-product-name').textContent = product.name;
+    document.getElementById('widget-product-image').src = product.image;
+    document.getElementById('widget-product-price').textContent = product.price;
+    document.getElementById('widget-product-availability').textContent = product.availability;
+    document.getElementById('widget-product-description').textContent = product.description;
+
+    // Show the widget
+    widget.style.display = 'block';
+}
+
+
+// Event listener for closing the widget
+document.getElementById('close-widget').addEventListener('click', () => {
+    document.getElementById('product-widget').style.display = 'none';
+});
+
+// Add event listeners to each product card
+document.querySelectorAll('.product-card-container').forEach((card, index) => {
+    card.addEventListener('click', () => openProductWidget(index));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Toggle Category Menu Visibility
 document.addEventListener('DOMContentLoaded', () => {

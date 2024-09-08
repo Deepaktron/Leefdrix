@@ -1027,13 +1027,13 @@ h1 i {
 }
 
 #close-widget:hover {
-    background: #e67e22; /* Change background to accent color on hover */
+    background: #ff0000; /* Change background to bright red on hover */
     color: #fff; /* White color for the icon on hover */
 }
 
 #close-widget:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.5); /* Focus ring with accent color */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Focus ring with bright red color */
 }
 
 /* Make the availability text green */
@@ -1041,6 +1041,10 @@ h1 i {
     color: green;
 }
 
+/* Add vertical spacing between size, quantity, and actions */
+.size, .quantity, .actions {
+    margin-bottom: 15px; /* Adds vertical spacing */
+}
 
 
 

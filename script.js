@@ -237,16 +237,21 @@ document.querySelectorAll('.size button').forEach(button => {
 
 // Add event listeners to each product card
 document.querySelectorAll('.product-card-container').forEach((card, index) => {
-    card.addEventListener('click', () => {
-        // Initialize selection for this product if not already done
-        if (!productSelections[index]) {
-            productSelections[index] = {
-                size: '',
-                quantity: 1
-            };
+    // Event listener for the product card click
+    card.addEventListener('click', (event) => {
+        // Check if the click is on the card image or the eye icon
+        if (event.target.closest('img') || event.target.closest('.fa-eye')) {
+            // Initialize selection for this product if not already done
+            if (!productSelections[index]) {
+                productSelections[index] = {
+                    size: '',
+                    quantity: 1
+                };
+            }
+    
+            openProductWidget(index);
+            setCurrentProductIndex(index);
         }
-        openProductWidget(index);
-        setCurrentProductIndex(index);
     });
 });
 
@@ -259,6 +264,49 @@ function setCurrentProductIndex(index) {
 function getCurrentProductIndex() {
     return currentProductIndex;
 }
+
+
+
+// Initialize the favourites count
+let favouritesCount = 0;
+
+// Object to keep track of favourited products
+const favouritedProducts = {};
+
+// Function to update the favourites badge count
+function updateFavouritesBadge() {
+    document.querySelector('.favourites-btn .badge').textContent = favouritesCount;
+}
+
+// Add event listeners to the heart icons in product cards
+document.querySelectorAll('.product-card-container .fa-heart').forEach((heartIcon) => {
+    heartIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent any default action
+
+        // Get a unique identifier for the product (e.g., data-product-id attribute)
+        const productId = heartIcon.getAttribute('data-product-id');
+
+        // Check if the product is already in the favourites
+        if (favouritedProducts[productId]) {
+            // If it is already favourited, remove it from the favourites
+            favouritedProducts[productId] = false; // Mark as not favourited
+            favouritesCount--; // Decrease the count
+            
+            // Update the heart icon style (optional)
+            heartIcon.classList.remove('favourited'); // Remove any "favourited" styling
+        } else {
+            // If it is not favourited, add it to the favourites
+            favouritedProducts[productId] = true; // Mark as favourited
+            favouritesCount++; // Increase the count
+            
+            // Update the heart icon style (optional)
+            heartIcon.classList.add('favourited'); // Add any "favourited" styling
+        }
+
+        // Update the favourites badge count
+        updateFavouritesBadge();
+    });
+});
 
 
 

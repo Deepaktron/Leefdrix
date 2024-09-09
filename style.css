@@ -947,6 +947,13 @@ h1 i {
     color: #fff;
 }
 
+/* Active size button styling */
+.size button.active {
+    background-color: #e67e22; /* Highlight color for active state */
+    color: white;
+    border-color: #e67e22;
+}
+
 /* Ensure Quantity Label and Controls are in a Single Row with Reduced Size */
 .quantity {
     display: flex;
@@ -1045,6 +1052,7 @@ h1 i {
 .size, .quantity, .actions {
     margin-bottom: 15px; /* Adds vertical spacing */
 }
+
 
 
 

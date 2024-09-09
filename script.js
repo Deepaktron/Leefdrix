@@ -147,6 +147,9 @@ const products = [
     },
 ];
 
+// Object to store selected size and quantity for each product
+const productSelections = {};
+
 // Function to open the product widget with the selected product's details
 function openProductWidget(index) {
     const widget = document.getElementById('product-widget');
@@ -159,20 +162,103 @@ function openProductWidget(index) {
     document.getElementById('widget-product-availability').textContent = product.availability;
     document.getElementById('widget-product-description').textContent = product.description;
 
+    // Restore previously selected size and quantity or set default values
+    const selectedSize = productSelections[index]?.size || '';
+    const selectedQuantity = productSelections[index]?.quantity || 1;
+
+    // Set the quantity input to the previously selected quantity
+    document.getElementById('quantity-input').value = selectedQuantity;
+
+    // Remove the 'active' class from all size buttons and set the previously selected size
+    document.querySelectorAll('.size button').forEach(button => {
+        button.classList.remove('active');
+        if (button.textContent === selectedSize) {
+            button.classList.add('active');
+        }
+    });
+
     // Show the widget
     widget.style.display = 'block';
 }
-
 
 // Event listener for closing the widget
 document.getElementById('close-widget').addEventListener('click', () => {
     document.getElementById('product-widget').style.display = 'none';
 });
 
+// Quantity increase button event listener
+document.getElementById('increase-quantity').addEventListener('click', function() {
+    let quantityInput = document.getElementById('quantity-input');
+    let currentValue = parseInt(quantityInput.value);
+
+    // Increase the value by 1
+    quantityInput.value = currentValue + 1;
+
+    // Store the updated quantity in the productSelections object
+    const productIndex = getCurrentProductIndex();
+    if (productIndex !== null) {
+        productSelections[productIndex].quantity = quantityInput.value;
+    }
+});
+
+// Quantity decrease button event listener
+document.getElementById('decrease-quantity').addEventListener('click', function() {
+    let quantityInput = document.getElementById('quantity-input');
+    let currentValue = parseInt(quantityInput.value);
+
+    // Decrease the value by 1, but don't go below 1
+    if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+
+        // Store the updated quantity in the productSelections object
+        const productIndex = getCurrentProductIndex();
+        if (productIndex !== null) {
+            productSelections[productIndex].quantity = quantityInput.value;
+        }
+    }
+});
+
+// Size button click event listeners to handle active state
+document.querySelectorAll('.size button').forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove the 'active' class from all size buttons
+        document.querySelectorAll('.size button').forEach(btn => btn.classList.remove('active'));
+
+        // Add the 'active' class to the clicked button
+        this.classList.add('active');
+
+        // Store the selected size in the productSelections object
+        const productIndex = getCurrentProductIndex();
+        if (productIndex !== null) {
+            productSelections[productIndex].size = this.textContent;
+        }
+    });
+});
+
 // Add event listeners to each product card
 document.querySelectorAll('.product-card-container').forEach((card, index) => {
-    card.addEventListener('click', () => openProductWidget(index));
+    card.addEventListener('click', () => {
+        // Initialize selection for this product if not already done
+        if (!productSelections[index]) {
+            productSelections[index] = {
+                size: '',
+                quantity: 1
+            };
+        }
+        openProductWidget(index);
+        setCurrentProductIndex(index);
+    });
 });
+
+// Helper functions to get/set the current product index
+let currentProductIndex = null;
+function setCurrentProductIndex(index) {
+    currentProductIndex = index;
+}
+
+function getCurrentProductIndex() {
+    return currentProductIndex;
+}
 
 
 

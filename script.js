@@ -310,6 +310,49 @@ document.querySelectorAll('.product-card-container .fa-heart').forEach((heartIco
 
 
 
+// Initialize the cart count
+let cartCount = 0;
+
+// Object to keep track of products added to the cart
+const cartProducts = {};
+
+// Function to update the cart badge count
+function updateCartBadge() {
+    document.querySelector('.cart-btn .badge').textContent = cartCount;
+}
+
+// Add event listeners to the cart icons in product cards
+document.querySelectorAll('.product-card-container .fa-shopping-cart').forEach((cartIcon) => {
+    cartIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent any default action
+
+        // Get a unique identifier for the product (e.g., data-product-id attribute)
+        const productId = cartIcon.getAttribute('data-product-id');
+
+        // Check if the product is already in the cart
+        if (cartProducts[productId]) {
+            // If it is already in the cart, remove it
+            cartProducts[productId] = false; // Mark as not in cart
+            cartCount--; // Decrease the count
+
+            // Update the cart icon style (optional)
+            cartIcon.classList.remove('in-cart'); // Remove any "in-cart" styling
+        } else {
+            // If it is not in the cart, add it
+            cartProducts[productId] = true; // Mark as in cart
+            cartCount++; // Increase the count
+
+            // Update the cart icon style (optional)
+            cartIcon.classList.add('in-cart'); // Add any "in-cart" styling
+        }
+
+        // Update the cart badge count
+        updateCartBadge();
+    });
+});
+
+
+
 
 
 

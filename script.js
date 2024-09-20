@@ -402,81 +402,74 @@ var swiper = new Swiper('.image-slider', {
 
 
 
-// card sliding animations
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('card-slider');
     const cardContainers = Array.from(slider.children);
-    const cardWidth = cardContainers[0].offsetWidth;
+    const cardWidth = cardContainers[0].offsetWidth + 30; // Adding gap width
     const numCards = cardContainers.length;
     
-    // Duplicate the cards to create an infinite loop effect
-    cardContainers.forEach(card => slider.appendChild(card.cloneNode(true)));
-    slider.style.width = `${cardWidth * cardContainers.length * 2}px`; // Set the width of the slider
+    const cardsToShow = 6; // Number of cards to display at a time
+    const totalPages = Math.ceil(numCards / cardsToShow); // Calculate total pages
+    let currentPage = 0; // Start at the first page
 
-    let currentIndex = 0;
-    const cardsToSlide = 3; // Number of cards to slide at a time
-    const slideDuration = 3000; // Duration for automatic sliding (3 seconds)
-    let slidingInterval;
+    // Generate the pagination dots dynamically
+    const paginationContainer = document.querySelector('.carousel-pagination-dots');
+    paginationContainer.innerHTML = ''; // Clear any existing dots
 
-    function slide() {
-        currentIndex += cardsToSlide;
-        if (currentIndex >= numCards) {
-            slider.style.transition = 'none'; // Disable transition for instant snap back
-            slider.style.transform = `translateX(0)`;
-            currentIndex = 0;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                slider.style.transform = `translateX(-${cardWidth * cardsToSlide}px)`; // Adjust for the first visible card
-            }, 20); // Short delay to ensure the transition is applied correctly
-        } else {
-            slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active'); // Set the first dot as active
+        dot.setAttribute('data-slide', i);
+        paginationContainer.appendChild(dot);
+    }
+
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+
+    function updateSliderPosition() {
+        const translateX = -(currentPage * cardsToShow * cardWidth);
+        slider.style.transform = `translateX(${translateX}px)`;
+
+        // Disable buttons if at the ends
+        document.getElementById('prev-slide').disabled = currentPage === 0;
+        document.getElementById('next-slide').disabled = currentPage === totalPages - 1;
+
+        // Update the active pagination dot
+        carouselDots.forEach(dot => dot.classList.remove('active'));
+        carouselDots[currentPage].classList.add('active');
+    }
+
+    function goToNextPage() {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            updateSliderPosition();
         }
     }
 
-    function goToSlide(index) {
-        if (index >= numCards) {
-            index = 0;
+    function goToPrevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            updateSliderPosition();
         }
-        if (index < 0) {
-            index = numCards - 1;
-        }
-        slider.style.transition = 'transform 0.5s ease'; // Enable transition
-        slider.style.transform = `translateX(-${index * cardWidth}px)`;
-        currentIndex = index;
     }
 
-    function startSliding() {
-        slidingInterval = setInterval(slide, slideDuration); // Automatic slide every specified duration
-    }
+    // Add event listeners to buttons
+    document.getElementById('next-slide').addEventListener('click', goToNextPage);
+    document.getElementById('prev-slide').addEventListener('click', goToPrevPage);
 
-    function stopSliding() {
-        clearInterval(slidingInterval); // Stop the automatic sliding
-    }
-
-    document.getElementById('next-button').addEventListener('click', () => {
-        stopSliding(); // Stop automatic sliding on manual navigation
-        slide();
-        startSliding(); // Restart automatic sliding after manual navigation
+    // Add event listeners to pagination dots
+    carouselDots.forEach(dot => {
+        dot.addEventListener('click', function () {
+            currentPage = parseInt(this.getAttribute('data-slide'));
+            updateSliderPosition();
+        });
     });
 
-    document.getElementById('prev-button').addEventListener('click', () => {
-        stopSliding(); // Stop automatic sliding on manual navigation
-        if (currentIndex <= 0) {
-            currentIndex = numCards - cardsToSlide;
-            slider.style.transition = 'none'; // Disable transition for instant snap back
-            slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
-                slider.style.transform = `translateX(-${(currentIndex - cardsToSlide) * cardWidth}px)`; // Adjust for the previous visible cards
-            }, 20);
-        } else {
-            goToSlide(currentIndex - cardsToSlide); // Adjust to slide back by the specified number
-        }
-        startSliding(); // Restart automatic sliding after manual navigation
-    });
-
-    startSliding(); // Start the automatic sliding when the page loads
+    // Initialize the slider position
+    updateSliderPosition();
 });
+
+
 
 
 

@@ -440,12 +440,11 @@ h1 i {
 }
 
 
-
 .carousel-wrapper {
     overflow: hidden; /* Hide overflow to only show visible part of the carousel */
-    width: 89%; /* Adjust the width as needed (e.g., 80% of the parent container) */
-    max-width: 1440px; /* Set a maximum width to prevent it from growing too large */
-    margin: 0 auto; /* Center the carousel horizontally */
+    width: 89%; /* Adjust the width as needed */
+    max-width: 1440px; /* Set a maximum width */
+    margin: 0 auto; /* Center the carousel */
     position: relative; /* For positioning child elements */
     display: flex; /* Align buttons and slider horizontally */
     align-items: center; /* Center items vertically */
@@ -453,8 +452,7 @@ h1 i {
 
 .square-cards-container {
     display: flex;
-    gap: 20px; /* Space between the cards */
-    transition: transform 0.5s ease; /* Smooth transition for sliding */
+    gap: 30px; /* Space between the cards */
     will-change: transform; /* Optimize performance during animation */
 }
 
@@ -465,8 +463,8 @@ h1 i {
 }
 
 .square-card {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -497,7 +495,7 @@ h1 i {
     border: 0.5px solid #e9ecef;
     text-align: center;
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition for hovering effect */
@@ -514,37 +512,64 @@ h1 i {
     color: white;
 }
 
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: background-color 0.3s ease; /* Smooth transition for button background */
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
 #card-slider {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    transition: transform 0.5s ease; /* Ensure smooth sliding */
+    transition: transform 0.5s linear; /* Linear transition for smooth ticker effect */
 }
+
+/* Styling for the new buttons */
+.btn-prev-carousel, .btn-next-carousel {
+    background-color: #059bd6; /* Button background color */
+    border: none; /* Remove default border */
+    color: white; /* Button text color */
+    padding: 10px; /* Padding for better click area */
+    cursor: pointer; /* Change cursor on hover */
+    position: absolute; /* Position buttons absolutely */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+    z-index: 1; /* Ensure buttons are above other elements */
+}
+
+.btn-prev-carousel {
+    left: 0; /* Position to the left */
+}
+
+.btn-next-carousel {
+    right: 0; /* Position to the right */
+}
+
+.btn-prev-carousel:hover, .btn-next-carousel:hover {
+    background-color: #0c9aff; /* Darker shade on hover */
+}
+
+/* Unique pagination dots */
+.carousel-pagination-dots {
+    text-align: center;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+}
+
+.carousel-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #FF5722;
+    transform: scale(1.2);
+}
+
+
 
 
 

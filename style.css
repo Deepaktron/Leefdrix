@@ -439,135 +439,126 @@ h1 i {
     color: white; /* White text color on hover */
 }
 
-
+/* Carousel Wrapper */
 .carousel-wrapper {
-    overflow: hidden; /* Hide overflow to only show visible part of the carousel */
-    width: 89%; /* Adjust the width as needed */
-    max-width: 1440px; /* Set a maximum width */
-    margin: 0 auto; /* Center the carousel */
-    position: relative; /* For positioning child elements */
-    display: flex; /* Align buttons and slider horizontally */
-    align-items: center; /* Center items vertically */
+    overflow: hidden; 
+    width: 100%; 
+    max-width: 1440px; 
+    margin: 0 auto; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    padding: 20px 0; /* Padding for spacing */
 }
 
-.square-cards-container {
+/* Carousel Container */
+.carousel-container {
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    position: relative;
+    overflow: hidden; /* Prevent overflow of slides */
+}
+
+/* Inner Carousel for Sliding Effect */
+.carousel-inner {
+    display: flex; 
+    transition: transform 0.5s ease; /* Smooth sliding transition */
+    width: 200%; /* Two slides, so 200% of the container width */
+}
+
+/* Individual Carousel Slide */
+.carousel-slide {
     display: flex;
-    gap: 30px; /* Space between the cards */
-    will-change: transform; /* Optimize performance during animation */
+    justify-content: center; /* Centers the cards in the slide */
+    gap: 25px; /* Space between cards */
+    flex: 0 0 100%; /* Each slide takes up 100% of the carousel width */
+    align-items: center; /* Center vertically if cards height varies */
+    box-sizing: border-box; /* Ensures padding and border are included in width/height */
 }
 
+/* Square Card Container */
 .square-card-container {
     display: flex;
-    flex-direction: column; /* Stack the card and label vertically */
-    align-items: center; /* Center align items horizontally */
+    flex-direction: column; 
+    align-items: center; 
 }
 
+/* Individual Square Card */
 .square-card {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    border: 0.5px solid #e9ecef;
-    box-shadow: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease; /* Smooth transition for hovering effect */
+    width: 200px; 
+    height: 200px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #f8f9fa; 
+    border: 0.5px solid #e9ecef; 
+    transition: transform 0.3s ease; 
 }
 
+/* Image within the Square Card */
 .square-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: cover; 
 }
 
+/* Card Label */
 .card-label {
-    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 10%;
-    padding: 10px;
-    background-color: #f8f9fa;
-    color: black;
-    border: 0.5px solid #e9ecef;
-    text-align: center;
-    width: 100%;
-    max-width: 180px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition for hovering effect */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
+    font-size: 14px; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    background-color: #f8f9fa; 
+    color: black; 
+    border: 0.5px solid #e9ecef; 
+    text-align: center; 
+    width: 100%; 
+    max-width: 180px; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
+/* Hover effect for card label */
 .card-label:hover,
 .square-card-container:hover .card-label {
-    background-color: black;
-    color: white;
+    background-color: black; /* Change to black on hover */
+    color: white; /* Change text to white on hover */
 }
 
-.card-label:active {
-    background-color: black;
-    color: white;
-}
-
-#card-slider {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    transition: transform 0.5s linear; /* Linear transition for smooth ticker effect */
-}
-
-/* Styling for the new buttons */
-.btn-prev-carousel, .btn-next-carousel {
-    background-color: #059bd6; /* Button background color */
-    border: none; /* Remove default border */
-    color: white; /* Button text color */
-    padding: 10px; /* Padding for better click area */
-    cursor: pointer; /* Change cursor on hover */
-    position: absolute; /* Position buttons absolutely */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust vertical alignment */
-    z-index: 1; /* Ensure buttons are above other elements */
-}
-
-.btn-prev-carousel {
-    left: 0; /* Position to the left */
-}
-
+/* Previous and Next Buttons */
+.btn-prev-carousel, 
 .btn-next-carousel {
-    right: 0; /* Position to the right */
+    background-color: #FF5722; /* Button color */
+    border: none; 
+    color: white; 
+    padding: 10px; 
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 1; 
 }
 
-.btn-prev-carousel:hover, .btn-next-carousel:hover {
-    background-color: #0c9aff; /* Darker shade on hover */
+/* Positioning Previous Button */
+.btn-prev-carousel {
+    left: 10px; 
 }
 
-/* Unique pagination dots */
-.carousel-pagination-dots {
-    text-align: center;
-    position: absolute;
-    bottom: -20px;
-    width: 100%;
+/* Positioning Next Button */
+.btn-next-carousel {
+    right: 10px; 
 }
 
-.carousel-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Hover effect for buttons */
+.btn-prev-carousel:hover, 
+.btn-next-carousel:hover {
+    background-color: #E64A19; /* Darken color on hover */
 }
 
-.carousel-dot.active {
-    background-color: #FF5722;
-    transform: scale(1.2);
-}
+
+
 
 
 
@@ -1194,28 +1185,7 @@ button.next {
 }
 
 
-.pagination-dots {
-    text-align: center;
-    position: absolute;
-    bottom: -20px; /* Adjust as needed */
-    width: 100%;
-}
 
-.pagination-dots span {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-dots .active {
-    background-color: #FF5722; /* Color for active dot */
-    transform: scale(1.2);
-}
 
 
 

@@ -1,380 +1,4 @@
-// Product data - Replace the image paths and product details accordingly
-const products = [
-    // Trending Products
-    {
-        name: 'Juicy Red Apples',
-        image: 'static/images/apple.png',
-        price: 'Rs 90.00',
-        originalPrice: 'Rs 112.50',
-        availability: '50 in stock',
-        description: 'Fresh and juicy red apples, perfect for a healthy snack.',
-        sku: '123464',
-    },
-    {
-        name: 'Exotic Fresh Coconuts',
-        image: 'static/images/coconut.png',
-        price: 'Rs 260.00',
-        originalPrice: 'Rs 305.00',
-        availability: '30 in stock',
-        description: 'Delicious and fresh coconuts, straight from the tropics.',
-        sku: '123465',
-    },
-    {
-        name: 'Sweet Seedless Grapes',
-        image: 'static/images/grapes.png',
-        price: 'Rs 225.00',
-        originalPrice: 'Rs 250.00',
-        availability: '40 in stock',
-        description: 'Sweet and juicy seedless grapes, ideal for snacking.',
-        sku: '123466',
-    },
-    {
-        name: 'Tropical Ripe Guavas',
-        image: 'static/images/guava.png',
-        price: 'Rs 320.00',
-        originalPrice: 'Rs 425.00',
-        availability: '20 in stock',
-        description: 'Tropical guavas with a sweet and tangy flavor.',
-        sku: '123467',
-    },
-    {
-        name: 'Succulent Fresh Shrimp',
-        image: 'static/images/shrimp.png',
-        price: 'Rs 750.00',
-        originalPrice: 'Rs 1,000.00',
-        availability: '15 in stock',
-        description: 'Fresh and succulent shrimp, great for seafood dishes.',
-        sku: '123468',
-    },
-    {
-        name: 'Premium Fresh Fish',
-        image: 'static/images/fish.png',
-        price: 'Rs 900.00',
-        originalPrice: 'Rs 1,200.00',
-        availability: '25 in stock',
-        description: 'High-quality fresh fish, perfect for your meals.',
-        sku: '123469',
-    },
-    {
-        name: 'Tender Chicken Breast',
-        image: 'static/images/chicken.png',
-        price: 'Rs 600.00',
-        originalPrice: 'Rs 800.00',
-        availability: '35 in stock',
-        description: 'Tender and juicy chicken breast, ideal for cooking.',
-        sku: '123470',
-    },
-    {
-        name: 'Flavorful Mutton Chops',
-        image: 'static/images/mutton.png',
-        price: 'Rs 1,200.00',
-        originalPrice: 'Rs 1,600.00',
-        availability: '10 in stock',
-        description: 'Flavorful mutton chops, great for grilling and stews.',
-        sku: '123471',
-    },
-    // Fresh Arrivals
-    {
-        name: 'Creamy Avocados',
-        image: 'static/images/avocado.png',
-        price: 'Rs 80.00',
-        originalPrice: 'Rs 100.00',
-        availability: '12 in stock',
-        description: 'Fresh creamy avocados, perfect for a healthy snack or addition to your meals.',
-        sku: '123456',
-    },
-    {
-        name: 'Tropical Pineapples',
-        image: 'static/images/pineapple.png',
-        price: 'Rs 170.00',
-        originalPrice: 'Rs 200.00',
-        availability: '10 in stock',
-        description: 'Juicy pineapples sourced directly from tropical regions.',
-        sku: '123457',
-    },
-    {
-        name: 'Fresh Peaches',
-        image: 'static/images/peach.png',
-        price: 'Rs 135.00',
-        originalPrice: 'Rs 150.00',
-        availability: '8 in stock',
-        description: 'Sweet and juicy peaches, harvested at the peak of ripeness.',
-        sku: '123458',
-    },
-    {
-        name: 'Zesty Kiwis',
-        image: 'static/images/kiwi.png',
-        price: 'Rs 75.00',
-        originalPrice: 'Rs 100.00',
-        availability: '20 in stock',
-        description: 'Tangy and fresh kiwis, full of vitamins and flavor.',
-        sku: '123459',
-    },
-    {
-        name: 'Fresh Mussels',
-        image: 'static/images/mussel.png',
-        price: 'Rs 350.00',
-        originalPrice: 'Rs 500.00',
-        availability: '15 in stock',
-        description: 'Fresh mussels, perfect for seafood lovers and gourmet dishes.',
-    },
-    {
-        name: 'Rich Dark Chocolate',
-        image: 'static/images/chocolate.png',
-        price: 'Rs 225.00',
-        originalPrice: 'Rs 300.00',
-        availability: '50 in stock',
-        description: 'Luxurious dark chocolate with a rich and intense flavor.',
-        sku: '123461',
-    },
-    {
-        name: 'Crunchy Almonds',
-        image: 'static/images/almond.png',
-        price: 'Rs 450.00',
-        originalPrice: 'Rs 600.00',
-        availability: '30 in stock',
-        description: 'Crunchy and delicious almonds, perfect for snacking or cooking.',
-        sku: '123462',
-    },
-    {
-        name: 'Sweet Bananas',
-        image: 'static/images/banana.png',
-        price: 'Rs 60.00',
-        originalPrice: 'Rs 80.00',
-        availability: '25 in stock',
-        description: 'Naturally sweet bananas, ideal for a quick snack or breakfast.',
-        sku: '123463',
-    },
-];
-
-// Object to store selected size and quantity for each product
-const productSelections = {};
-
-// Function to open the product widget with the selected product's details
-function openProductWidget(index) {
-    const widget = document.getElementById('product-widget');
-    const product = products[index];
-
-    // Populate the widget with product details
-    document.getElementById('widget-product-name').textContent = product.name;
-    document.getElementById('widget-product-image').src = product.image;
-    document.getElementById('widget-product-price').textContent = product.price;
-    document.getElementById('widget-product-availability').textContent = product.availability;
-    document.getElementById('widget-product-description').textContent = product.description;
-
-    // Restore previously selected size and quantity or set default values
-    const selectedSize = productSelections[index]?.size || '';
-    const selectedQuantity = productSelections[index]?.quantity || 1;
-
-    // Set the quantity input to the previously selected quantity
-    document.getElementById('quantity-input').value = selectedQuantity;
-
-    // Remove the 'active' class from all size buttons and set the previously selected size
-    document.querySelectorAll('.size button').forEach(button => {
-        button.classList.remove('active');
-        if (button.textContent === selectedSize) {
-            button.classList.add('active');
-        }
-    });
-
-    // Show the widget
-    widget.style.display = 'block';
-}
-
-// Event listener for closing the widget
-document.getElementById('close-widget').addEventListener('click', () => {
-    document.getElementById('product-widget').style.display = 'none';
-});
-
-// Quantity increase button event listener
-document.getElementById('increase-quantity').addEventListener('click', function() {
-    let quantityInput = document.getElementById('quantity-input');
-    let currentValue = parseInt(quantityInput.value);
-
-    // Increase the value by 1
-    quantityInput.value = currentValue + 1;
-
-    // Store the updated quantity in the productSelections object
-    const productIndex = getCurrentProductIndex();
-    if (productIndex !== null) {
-        productSelections[productIndex].quantity = quantityInput.value;
-    }
-});
-
-// Quantity decrease button event listener
-document.getElementById('decrease-quantity').addEventListener('click', function() {
-    let quantityInput = document.getElementById('quantity-input');
-    let currentValue = parseInt(quantityInput.value);
-
-    // Decrease the value by 1, but don't go below 1
-    if (currentValue > 1) {
-        quantityInput.value = currentValue - 1;
-
-        // Store the updated quantity in the productSelections object
-        const productIndex = getCurrentProductIndex();
-        if (productIndex !== null) {
-            productSelections[productIndex].quantity = quantityInput.value;
-        }
-    }
-});
-
-// Size button click event listeners to handle active state
-document.querySelectorAll('.size button').forEach(button => {
-    button.addEventListener('click', function() {
-        // Remove the 'active' class from all size buttons
-        document.querySelectorAll('.size button').forEach(btn => btn.classList.remove('active'));
-
-        // Add the 'active' class to the clicked button
-        this.classList.add('active');
-
-        // Store the selected size in the productSelections object
-        const productIndex = getCurrentProductIndex();
-        if (productIndex !== null) {
-            productSelections[productIndex].size = this.textContent;
-        }
-    });
-});
-
-// Add event listeners to each product card
-document.querySelectorAll('.product-card-container').forEach((card, index) => {
-    // Event listener for the product card click
-    card.addEventListener('click', (event) => {
-        // Check if the click is on the card image or the eye icon
-        if (event.target.closest('img') || event.target.closest('.fa-eye')) {
-            // Initialize selection for this product if not already done
-            if (!productSelections[index]) {
-                productSelections[index] = {
-                    size: '',
-                    quantity: 1
-                };
-            }
-    
-            openProductWidget(index);
-            setCurrentProductIndex(index);
-        }
-    });
-});
-
-// Helper functions to get/set the current product index
-let currentProductIndex = null;
-function setCurrentProductIndex(index) {
-    currentProductIndex = index;
-}
-
-function getCurrentProductIndex() {
-    return currentProductIndex;
-}
-
-
-
-// Initialize the favourites count
-let favouritesCount = 0;
-
-// Object to keep track of favourited products
-const favouritedProducts = {};
-
-// Function to update the favourites badge count
-function updateFavouritesBadge() {
-    document.querySelector('.favourites-btn .badge').textContent = favouritesCount;
-}
-
-// Add event listeners to the heart icons in product cards
-document.querySelectorAll('.product-card-container .fa-heart').forEach((heartIcon) => {
-    heartIcon.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent any default action
-
-        // Get a unique identifier for the product (e.g., data-product-id attribute)
-        const productId = heartIcon.getAttribute('data-product-id');
-
-        // Check if the product is already in the favourites
-        if (favouritedProducts[productId]) {
-            // If it is already favourited, remove it from the favourites
-            favouritedProducts[productId] = false; // Mark as not favourited
-            favouritesCount--; // Decrease the count
-            
-            // Update the heart icon style (optional)
-            heartIcon.classList.remove('favourited'); // Remove any "favourited" styling
-        } else {
-            // If it is not favourited, add it to the favourites
-            favouritedProducts[productId] = true; // Mark as favourited
-            favouritesCount++; // Increase the count
-            
-            // Update the heart icon style (optional)
-            heartIcon.classList.add('favourited'); // Add any "favourited" styling
-        }
-
-        // Update the favourites badge count
-        updateFavouritesBadge();
-    });
-});
-
-
-
-// Initialize the cart count
-let cartCount = 0;
-
-// Object to keep track of products added to the cart
-const cartProducts = {};
-
-// Function to update the cart badge count
-function updateCartBadge() {
-    document.querySelector('.cart-btn .badge').textContent = cartCount;
-}
-
-// Add event listeners to the cart icons in product cards
-document.querySelectorAll('.product-card-container .fa-shopping-cart').forEach((cartIcon) => {
-    cartIcon.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent any default action
-
-        // Get a unique identifier for the product (e.g., data-product-id attribute)
-        const productId = cartIcon.getAttribute('data-product-id');
-
-        // Check if the product is already in the cart
-        if (cartProducts[productId]) {
-            // If it is already in the cart, remove it
-            cartProducts[productId] = false; // Mark as not in cart
-            cartCount--; // Decrease the count
-
-            // Update the cart icon style (optional)
-            cartIcon.classList.remove('in-cart'); // Remove any "in-cart" styling
-        } else {
-            // If it is not in the cart, add it
-            cartProducts[productId] = true; // Mark as in cart
-            cartCount++; // Increase the count
-
-            // Update the cart icon style (optional)
-            cartIcon.classList.add('in-cart'); // Add any "in-cart" styling
-        }
-
-        // Update the cart badge count
-        updateCartBadge();
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Toggle Category Menu Visibility
-document.addEventListener('DOMContentLoaded', () => {
-    const categoryButton = document.querySelector('.category-button');
-    const categoryMenu = document.querySelector('.category-menu');
-
-    categoryButton.addEventListener('click', () => {
-        categoryMenu.classList.toggle('open');
-    });
-});
+// Main Advertisement
 
 // main sliding in start
 var swiper = new Swiper('.image-slider', {
@@ -398,76 +22,448 @@ var swiper = new Swiper('.image-slider', {
 });
 
 
+//-----------------------------------------------------------------------
 
 
 
+// Featured Product section sliding
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('card-slider');
-    const cardContainers = Array.from(slider.children);
-    const cardWidth = cardContainers[0].offsetWidth + 30; // Adding gap width
-    const numCards = cardContainers.length;
-    
-    const cardsToShow = 6; // Number of cards to display at a time
-    const totalPages = Math.ceil(numCards / cardsToShow); // Calculate total pages
-    let currentPage = 0; // Start at the first page
+document.addEventListener('DOMContentLoaded', function() {
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slide = document.querySelector('.featured-products-slide');
+    const groups = document.querySelectorAll('.featured-products-group');
+    const paginationDots = document.querySelector('.pagination-dots');
+    let currentIndex = 0;
 
-    // Generate the pagination dots dynamically
-    const paginationContainer = document.querySelector('.carousel-pagination-dots');
-    paginationContainer.innerHTML = ''; // Clear any existing dots
-
-    for (let i = 0; i < totalPages; i++) {
+    // Create pagination dots
+    groups.forEach((_, index) => {
         const dot = document.createElement('span');
-        dot.classList.add('carousel-dot');
-        if (i === 0) dot.classList.add('active'); // Set the first dot as active
-        dot.setAttribute('data-slide', i);
-        paginationContainer.appendChild(dot);
-    }
-
-    const carouselDots = document.querySelectorAll('.carousel-dot');
-
-    function updateSliderPosition() {
-        const translateX = -(currentPage * cardsToShow * cardWidth);
-        slider.style.transform = `translateX(${translateX}px)`;
-
-        // Disable buttons if at the ends
-        document.getElementById('prev-slide').disabled = currentPage === 0;
-        document.getElementById('next-slide').disabled = currentPage === totalPages - 1;
-
-        // Update the active pagination dot
-        carouselDots.forEach(dot => dot.classList.remove('active'));
-        carouselDots[currentPage].classList.add('active');
-    }
-
-    function goToNextPage() {
-        if (currentPage < totalPages - 1) {
-            currentPage++;
-            updateSliderPosition();
-        }
-    }
-
-    function goToPrevPage() {
-        if (currentPage > 0) {
-            currentPage--;
-            updateSliderPosition();
-        }
-    }
-
-    // Add event listeners to buttons
-    document.getElementById('next-slide').addEventListener('click', goToNextPage);
-    document.getElementById('prev-slide').addEventListener('click', goToPrevPage);
-
-    // Add event listeners to pagination dots
-    carouselDots.forEach(dot => {
-        dot.addEventListener('click', function () {
-            currentPage = parseInt(this.getAttribute('data-slide'));
-            updateSliderPosition();
+        if (index === 0) dot.classList.add('active'); // Set the first dot as active
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
         });
+        paginationDots.appendChild(dot);
     });
 
-    // Initialize the slider position
-    updateSliderPosition();
+    function showSlide(index) {
+        const slideWidth = slide.offsetWidth / groups.length;
+        slide.style.transform = `translateX(-${index * slideWidth}px)`;
+        
+        // Update active dot
+        paginationDots.querySelectorAll('span').forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === index);
+        });
+    }
+
+    prevButton.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+    });
+
+    nextButton.addEventListener('click', function() {
+        if (currentIndex < groups.length - 1) {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+    });
+
+    // Initialize display
+    showSlide(currentIndex);
 });
+
+
+//-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+const products = {
+    'product-1': {
+        name: "Avocado (500g)",
+        price: 80,
+        originalPrice: 120,
+        description: "Fresh and creamy avocados.",
+        image: 'static/images/avocado.png'
+    },
+    'product-2': {
+        name: "Blueberries (250g)",
+        price: 200,
+        originalPrice: 250,
+        description: "Sweet and juicy blueberries.",
+        image: 'static/images/blueberry.png'
+    },
+    'product-3': {
+        name: "Sweet Potato (1kg)",
+        price: 120,
+        originalPrice: 150,
+        description: "Nutritious and delicious sweet potatoes.",
+        image: 'static/images/sweet-potato.png'
+    },
+    'product-4': {
+        name: "Almond Milk (1L)",
+        price: 150,
+        description: "Creamy and dairy-free almond milk.",
+        image: 'static/images/almond-milk.png'
+    },
+    'product-5': {
+        name: "Kiwi (6 pcs)",
+        price: 90,
+        originalPrice: 120,
+        description: "Tangy and sweet kiwis.",
+        image: 'static/images/kiwi.png'
+    },
+    'product-6': {
+        name: "Quinoa (500g)",
+        price: 200,
+        originalPrice: 250,
+        description: "High-protein and gluten-free quinoa.",
+        image: 'static/images/quinoa.png'
+    },
+    'product-7': {
+        name: "Chia Seeds (200g)",
+        price: 120,
+        originalPrice: 150,
+        description: "Nutritious chia seeds for a healthy diet.",
+        image: 'static/images/chia-seeds.png'
+    },
+    'product-8': {
+        name: "Coconut Water (500ml)",
+        price: 60,
+        originalPrice: 80,
+        description: "Refreshing coconut water.",
+        image: 'static/images/coconut-water.png'
+    },
+    'product-9': {
+        name: "Spinach (1kg)",
+        price: 50,
+        originalPrice: 70,
+        description: "Fresh and healthy spinach.",
+        image: 'static/images/spinach.png'
+    },
+    'product-10': {
+        name: "Tofu (250g)",
+        price: 90,
+        originalPrice: 120,
+        description: "Versatile and protein-rich tofu.",
+        image: 'static/images/tofu.png'
+    },
+    'product-11': {
+        name: "Matcha Powder (100g)",
+        price: 300,
+        originalPrice: 350,
+        description: "Premium quality matcha powder.",
+        image: 'static/images/matcha.png'
+    },
+    'product-12': {
+        name: "Dragon Fruit",
+        price: 250,
+        description: "Exotic and vibrant dragon fruit.",
+        image: 'static/images/dragon-fruit.png'
+    },
+    'product-13': {
+        name: "Pumpkin (1kg)",
+        price: 80,
+        originalPrice: 100,
+        description: "Fresh and nutritious pumpkin.",
+        image: 'static/images/pumpkin.png'
+    },
+    'product-14': {
+        name: "Fresh Turmeric (100g)",
+        price: 60,
+        originalPrice: 80,
+        description: "Healthy fresh turmeric.",
+        image: 'static/images/turmeric.png'
+    },
+    'product-15': {
+        name: "Lemongrass (100g)",
+        price: 40,
+        originalPrice: 50,
+        description: "Aromatic and flavorful lemongrass.",
+        image: 'static/images/lemongrass.png'
+    },
+    'product-16': {
+        name: "Fresh Ginger (200g)",
+        price: 50,
+        description: "Spicy and fresh ginger.",
+        image: 'static/images/ginger.png'
+    },
+    'product-17': {
+        name: "Celery (1 bunch)",
+        price: 60,
+        originalPrice: 80,
+        description: "Crisp and fresh celery.",
+        image: 'static/images/celery.png'
+    },
+    'product-18': {
+        name: "Raspberries (250g)",
+        price: 220,
+        originalPrice: 270,
+        description: "Sweet and tangy raspberries.",
+        image: 'static/images/raspberry.png'
+    },
+    'product-19': {
+        name: "Mango (1kg)",
+        price: 150,
+        originalPrice: 200,
+        description: "Sweet and juicy mangoes.",
+        image: 'static/images/mango.png'
+    },
+    'product-20': {
+        name: "Peach (500g)",
+        price: 120,
+        originalPrice: 150,
+        description: "Fresh and juicy peaches.",
+        image: 'static/images/peach.png'
+    },
+    'product-21': {
+        name: "Grapes (250g)",
+        price: 100,
+        originalPrice: 130,
+        description: "Sweet and crunchy grapes.",
+        image: 'static/images/grapes.png'
+    },
+    'product-22': {
+        name: "Pineapple (1 pcs)",
+        price: 70,
+        originalPrice: 90,
+        description: "Tropical and sweet pineapple.",
+        image: 'static/images/pineapple.png'
+    },
+    'product-23': {
+        name: "Cucumber (1 pcs)",
+        price: 30,
+        originalPrice: 40,
+        description: "Crisp and refreshing cucumber.",
+        image: 'static/images/cucumber.png'
+    },
+    'product-24': {
+        name: "Cabbage (1kg)",
+        price: 60,
+        originalPrice: 80,
+        description: "Fresh and crunchy cabbage.",
+        image: 'static/images/cabbage.png'
+    },
+    'product-25': {
+        name: "Condiments (200g)",
+        price: 150,
+        originalPrice: 180,
+        description: "A variety of flavorful condiments.",
+        image: 'static/images/condiments.png'
+    },
+    'product-26': {
+        name: "Dairy Products (1L)",
+        price: 60,
+        originalPrice: 80,
+        description: "Fresh and creamy dairy products.",
+        image: 'static/images/dairy.png'
+    },
+    'product-27': {
+        name: "Dessert (500g)",
+        price: 250,
+        originalPrice: 300,
+        description: "Delicious desserts for everyone.",
+        image: 'static/images/Dessert.png'
+    },
+    'product-28': {
+        name: "Fresh Fish (1kg)",
+        price: 400,
+        originalPrice: 500,
+        description: "Freshly caught fish.",
+        image: 'static/images/fish.png'
+    },
+    'product-29': {
+        name: "Frozen Foods (1kg)",
+        price: 350,
+        originalPrice: 450,
+        description: "A variety of frozen foods.",
+        image: 'static/images/frozen_foods.png'
+    },
+    'product-30': {
+        name: "Mixed Fruits (1kg)",
+        price: 150,
+        originalPrice: 200,
+        description: "A mix of fresh fruits.",
+        image: 'static/images/fruits.png'
+    },
+    'product-31': {
+        name: "Juicy Red Apples",
+        price: 90,
+        originalPrice: 112.50,
+        description: "Fresh and juicy red apples.",
+        image: 'static/images/apple.png'
+    },
+    'product-32': {
+        name: "Exotic Fresh Coconuts",
+        price: 260,
+        originalPrice: 305,
+        description: "Fresh coconuts for a tropical taste.",
+        image: 'static/images/coconut.png'
+    },
+    'product-33': {
+        name: "Sweet Seedless Grapes",
+        price: 225,
+        originalPrice: 250,
+        description: "Delicious and sweet seedless grapes.",
+        image: 'static/images/grapes.png'
+    },
+    'product-34': {
+        name: "Tropical Ripe Guavas",
+        price: 320,
+        originalPrice: 425,
+        description: "Ripe guavas packed with flavor.",
+        image: 'static/images/guava.png'
+    },
+    'product-35': {
+        name: "Succulent Fresh Shrimp",
+        price: 750,
+        originalPrice: 1000,
+        description: "Fresh shrimp perfect for seafood dishes.",
+        image: 'static/images/shrimp.png'
+    },
+    'product-36': {
+        name: "Premium Fresh Fish",
+        price: 900,
+        originalPrice: 1200,
+        description: "High-quality fresh fish for grilling or frying.",
+        image: 'static/images/fish.png'
+    },
+    'product-37': {
+        name: "Tender Chicken Breast",
+        price: 600,
+        originalPrice: 800,
+        description: "Lean and tender chicken breast for healthy meals.",
+        image: 'static/images/chicken.png'
+    },
+    'product-38': {
+        name: "Flavorful Mutton Chops",
+        price: 1200,
+        originalPrice: 1600,
+        description: "Juicy mutton chops, perfect for grilling.",
+        image: 'static/images/mutton.png'
+    },
+    'product-39': {
+        name: "Creamy Avocados",
+        price: 80,
+        originalPrice: 100,
+        description: "Rich and creamy avocados, perfect for salads.",
+        image: 'static/images/avocado.png'
+    },
+    'product-40': {
+        name: "Tropical Pineapples",
+        price: 170,
+        originalPrice: 200,
+        description: "Juicy and sweet tropical pineapples.",
+        image: 'static/images/pineapple.png'
+    },
+    'product-41': {
+        name: "Fresh Peaches",
+        price: 135,
+        originalPrice: 150,
+        description: "Delicious and ripe peaches for your desserts.",
+        image: 'static/images/peach.png'
+    },
+    'product-42': {
+        name: "Zesty Kiwis",
+        price: 75,
+        originalPrice: 100,
+        description: "Tart and flavorful kiwis, great for snacking.",
+        image: 'static/images/kiwi.png'
+    },
+    'product-43': {
+        name: "Fresh Mussels",
+        price: 350,
+        originalPrice: 500,
+        description: "Freshly harvested mussels, ideal for seafood dishes.",
+        image: 'static/images/mussel.png'
+    },
+    'product-44': {
+        name: "Rich Dark Chocolate",
+        price: 225,
+        originalPrice: 300,
+        description: "Indulgent dark chocolate, perfect for chocolate lovers.",
+        image: 'static/images/chocolate.png'
+    },
+    'product-45': {
+        name: "Crunchy Almonds",
+        price: 450,
+        originalPrice: 600,
+        description: "Healthy and crunchy almonds, a perfect snack.",
+        image: 'static/images/almond.png'
+    },
+    'product-46': {
+        name: "Sweet Bananas",
+        price: 60,
+        originalPrice: 80,
+        description: "Fresh and sweet bananas, great for breakfast.",
+        image: 'static/images/banana.png'
+    }
+};
+
+
+// Event listener for opening the widget
+document.querySelectorAll('.featured-product').forEach(product => {
+    product.addEventListener('click', function() {
+        const productId = this.id; // Get the ID of the clicked product
+        const productDetails = products[productId]; // Fetch the details from the object
+
+        // Populate the widget
+        document.getElementById('widget-product-name').textContent = productDetails.name;
+        document.getElementById('widget-product-price').textContent = `Rs ${productDetails.price} (Original Price: Rs ${productDetails.originalPrice})`;
+        document.getElementById('widget-product-description').textContent = productDetails.description;
+        document.getElementById('widget-product-image').src = productDetails.image;
+
+        // Show the widget
+        document.getElementById('product-widget').style.display = 'block';
+    });
+});
+
+// Close widget functionality
+document.getElementById('close-widget').addEventListener('click', function() {
+    document.getElementById('product-widget').style.display = 'none';
+});
+
+
+
+
+
+//--------------------------------------------------------
+// product grid cards
+
+// Event listener for opening the widget
+document.querySelectorAll('.product-card-container').forEach(product => {
+    product.addEventListener('click', function() {
+        const productId = this.id; // Get the ID of the clicked product
+        const productDetails = products[productId]; // Fetch the details from the object
+
+        // Populate the widget
+        document.getElementById('widget-product-name').textContent = productDetails.name;
+        document.getElementById('widget-product-price').textContent = `Rs ${productDetails.price} (Original Price: Rs ${productDetails.originalPrice})`;
+        document.getElementById('widget-product-description').textContent = productDetails.description;
+        document.getElementById('widget-product-image').src = productDetails.image;
+        document.getElementById('widget-product-availability').textContent = productDetails.availability || 'In Stock'; // Set default availability
+
+        // Show the widget
+        document.getElementById('product-widget').style.display = 'block';
+    });
+});
+
+// Close widget functionality
+document.getElementById('close-widget').addEventListener('click', function() {
+    document.getElementById('product-widget').style.display = 'none';
+});
+
+//----------------------------------------------------------------------------------
 
 
 
@@ -530,75 +526,31 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 });
+//--------------------------------------------------------------
 
 
 
 
+const carouselInner = document.getElementById('carousel-inner');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
 
+    let currentSlide = 0;
 
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const slide = document.querySelector('.featured-products-slide');
-    const groups = document.querySelectorAll('.featured-products-group');
-    const paginationDots = document.querySelector('.pagination-dots');
-    let currentIndex = 0;
-
-    // Create pagination dots
-    groups.forEach((_, index) => {
-        const dot = document.createElement('span');
-        if (index === 0) dot.classList.add('active'); // Set the first dot as active
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-        });
-        paginationDots.appendChild(dot);
-    });
-
-    function showSlide(index) {
-        const slideWidth = slide.offsetWidth / groups.length;
-        slide.style.transform = `translateX(-${index * slideWidth}px)`;
-        
-        // Update active dot
-        paginationDots.querySelectorAll('span').forEach((dot, dotIndex) => {
-            dot.classList.toggle('active', dotIndex === index);
-        });
-    }
-
-    prevButton.addEventListener('click', function() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            showSlide(currentIndex);
-        }
-    });
-
+    // Next slide function
     nextButton.addEventListener('click', function() {
-        if (currentIndex < groups.length - 1) {
-            currentIndex++;
-            showSlide(currentIndex);
+        if (currentSlide < 1) { // Since we only have 2 slides (0 and 1)
+            currentSlide++;
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
     });
 
-    // Initialize display
-    showSlide(currentIndex);
-});
-
-
-
-
-
-
-
-
-
-
-
-
+    // Previous slide function
+    prevButton.addEventListener('click', function() {
+        if (currentSlide > 0) { // Don't go below slide 0
+            currentSlide--;
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    });
 
 

@@ -21,13 +21,13 @@
 <body>
     <div class="top-bar">
         <!-- Content for the top bar (e.g., notification, contact info, etc.) -->
-        <p>Welcome to Leefdrix! Enjoy our latest products and offers.</p>
+        <p>Welcome to Feeldrix! Enjoy our latest products and offers.</p>
     </div>
     
     <header>
         <div class="header-inner">
             <h1>
-                Leef<span class="highlight-d">d</span>rix 
+                Feel<span class="highlight-d">d</span>rix 
                 <i class="fas fa-leaf"></i> <!-- Leaf icon added here -->
             </h1>            
             <form class="search-form" action="#" method="get">
@@ -168,337 +168,349 @@
     </div>
     <div class="carousel-wrapper">
         <div class="carousel-container">
-            <div class="square-cards-container" id="card-slider">
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+            <div class="carousel-inner" id="carousel-inner">
+                <!-- Slide 1: Cards 1 to 6 -->
+                <div class="carousel-slide">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+                        </div>
+                        <div class="card-label">Fruits</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Fruits')">Fruits</div>
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/vegetables.png') }}" alt="Vegetables">
+                        </div>
+                        <div class="card-label">Vegetables</div>
+                    </div>
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
+                        </div>
+                        <div class="card-label">Dairy</div>
+                    </div>
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Bread">
+                        </div>
+                        <div class="card-label">Bread</div>
+                    </div>
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/meat.png') }}" alt="Meat">
+                        </div>
+                        <div class="card-label">Meat</div>
+                    </div>
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/seafood.png') }}" alt="Seafood">
+                        </div>
+                        <div class="card-label">Seafood</div>
+                    </div>
                 </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/vegetables.png') }}" alt="Vegetables">
+    
+                <!-- Slide 2: Cards 7 to 12 -->
+                <div class="carousel-slide">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/snacks.png') }}" alt="Snacks">
+                        </div>
+                        <div class="card-label">Snacks</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Vegetables')">Vegetables</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/juice.png') }}" alt="Juice">
+                        </div>
+                        <div class="card-label">Organic Juice</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Dairy')">Dairy</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Bread">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
+                        </div>
+                        <div class="card-label">Frozen Foods</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Bread')">Bread</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/meat.png') }}" alt="Meat">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/beverages.png') }}" alt="Beverages">
+                        </div>
+                        <div class="card-label">Beverages</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Meat')">Meat</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/seafood.png') }}" alt="Seafood">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
+                        </div>
+                        <div class="card-label">Condiments</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Seafood')">Seafood</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/snacks.png') }}" alt="Snacks">
+                    <div class="square-card-container">
+                        <div class="square-card">
+                            <img src="{{ url_for('static', filename='images/dessert.png') }}" alt="Dessert">
+                        </div>
+                        <div class="card-label">Dessert</div>
                     </div>
-                    <div class="card-label" onclick="handleCategoryClick('Snacks')">Snacks</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/juice.png') }}" alt="Juice">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Juice')">Organic Juice</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Frozen Foods')">Frozen Foods</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/beverages.png') }}" alt="Beverages">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Beverages')">Beverages</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Condiments')">Condiments</div>
-                </div>
-                <div class="square-card-container">
-                    <div class="square-card">
-                        <img src="{{ url_for('static', filename='images/dessert.png') }}" alt="Dessert">
-                    </div>
-                    <div class="card-label" onclick="handleCategoryClick('Dessert')">Dessert</div>
                 </div>
             </div>
         </div>
+    
+        <!-- Previous and Next buttons -->
         <button class="btn-prev-carousel" id="prev-slide">&#10094;</button>
         <button class="btn-next-carousel" id="next-slide">&#10095;</button>
-        <!-- Unique pagination dots section -->
-        <div class="carousel-pagination-dots">
-            <span class="carousel-dot active" data-slide="0"></span>
-            <span class="carousel-dot" data-slide="1"></span>
-            <span class="carousel-dot" data-slide="2"></span>
-            <!-- Add more dots based on the number of slides -->
-        </div>
+        
+        
     </div>
     
     
+    
+    
+    
 
 
-    <div class="featured-products-section">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="featured-products-container">
-            <button class="prev">&#10094;</button> <!-- Previous button -->
-            <div class="featured-products-wrapper">
-                <div class="featured-products-slide">
-                    <!-- Slide 1: Trending products -->
-                    <div class="featured-products-group">
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/avocado.png') }}" alt="Avocado">
-                            <div class="product-info">
-                                <p class="product-name">Avocado (500g)</p>
-                                <p class="product-price">Rs 80 <span class="original-price">Rs 120</span></p>
+        <div class="featured-products-section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="featured-products-container">
+                <button class="prev">&#10094;</button> <!-- Previous button -->
+                <div class="featured-products-wrapper">
+                    <div class="featured-products-slide">
+                        <!-- Slide 1: Trending products -->
+                        <div class="featured-products-group">
+                            <div class="featured-product" id="product-1">
+                                <img src="{{ url_for('static', filename='images/avocado.png') }}" alt="Avocado">
+                                <div class="product-info">
+                                    <p class="product-name">Avocado (500g)</p>
+                                    <p class="product-price">Rs 80 <span class="original-price">Rs 120</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-2">
+                                <img src="{{ url_for('static', filename='images/blueberry.png') }}" alt="Blueberry">
+                                <div class="product-info">
+                                    <p class="product-name">Blueberries (250g)</p>
+                                    <p class="product-price">Rs 200 <span class="original-price">Rs 250</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-3">
+                                <img src="{{ url_for('static', filename='images/sweet-potato.png') }}" alt="Sweet Potato">
+                                <div class="product-info">
+                                    <p class="product-name">Sweet Potato (1kg)</p>
+                                    <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-4">
+                                <img src="{{ url_for('static', filename='images/almond-milk.png') }}" alt="Almond Milk">
+                                <div class="product-info">
+                                    <p class="product-name">Almond Milk (1L)</p>
+                                    <p class="product-price">Rs 150</p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-5">
+                                <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="Kiwi">
+                                <div class="product-info">
+                                    <p class="product-name">Kiwi (6 pcs)</p>
+                                    <p class="product-price">Rs 90 <span class="original-price">Rs 120</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-6">
+                                <img src="{{ url_for('static', filename='images/quinoa.png') }}" alt="Quinoa">
+                                <div class="product-info">
+                                    <p class="product-name">Quinoa (500g)</p>
+                                    <p class="product-price">Rs 200 <span class="original-price">Rs 250</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/blueberry.png') }}" alt="Blueberry">
-                            <div class="product-info">
-                                <p class="product-name">Blueberries (250g)</p>
-                                <p class="product-price">Rs 200 <span class="original-price">Rs 250</span></p>
+                        
+                        <!-- Slide 2: More trending products -->
+                        <div class="featured-products-group">
+                            <div class="featured-product" id="product-7">
+                                <img src="{{ url_for('static', filename='images/chia-seeds.png') }}" alt="Chia Seeds">
+                                <div class="product-info">
+                                    <p class="product-name">Chia Seeds (200g)</p>
+                                    <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-8">
+                                <img src="{{ url_for('static', filename='images/coconut-water.png') }}" alt="Coconut Water">
+                                <div class="product-info">
+                                    <p class="product-name">Coconut Water (500ml)</p>
+                                    <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-9">
+                                <img src="{{ url_for('static', filename='images/spinach.png') }}" alt="Spinach">
+                                <div class="product-info">
+                                    <p class="product-name">Spinach (1kg)</p>
+                                    <p class="product-price">Rs 50 <span class="original-price">Rs 70</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-10">
+                                <img src="{{ url_for('static', filename='images/tofu.png') }}" alt="Tofu">
+                                <div class="product-info">
+                                    <p class="product-name">Tofu (250g)</p>
+                                    <p class="product-price">Rs 90 <span class="original-price">Rs 120</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-11">
+                                <img src="{{ url_for('static', filename='images/matcha.png') }}" alt="Matcha">
+                                <div class="product-info">
+                                    <p class="product-name">Matcha Powder (100g)</p>
+                                    <p class="product-price">Rs 300 <span class="original-price">Rs 350</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-12">
+                                <img src="{{ url_for('static', filename='images/dragon-fruit.png') }}" alt="Dragon Fruit">
+                                <div class="product-info">
+                                    <p class="product-name">Dragon Fruit</p>
+                                    <p class="product-price">Rs 250</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/sweet-potato.png') }}" alt="Sweet Potato">
-                            <div class="product-info">
-                                <p class="product-name">Sweet Potato (1kg)</p>
-                                <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
+                        
+                        
+                        <!-- Slide 3: Additional trending products -->
+                        <div class="featured-products-group">
+                            <div class="featured-product" id="product-13">
+                                <img src="{{ url_for('static', filename='images/pumpkin.png') }}" alt="Pumpkin">
+                                <div class="product-info">
+                                    <p class="product-name">Pumpkin (1kg)</p>
+                                    <p class="product-price">Rs 80 <span class="original-price">Rs 100</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-14">
+                                <img src="{{ url_for('static', filename='images/turmeric.png') }}" alt="Turmeric">
+                                <div class="product-info">
+                                    <p class="product-name">Fresh Turmeric (100g)</p>
+                                    <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-15">
+                                <img src="{{ url_for('static', filename='images/lemongrass.png') }}" alt="Lemongrass">
+                                <div class="product-info">
+                                    <p class="product-name">Lemongrass (100g)</p>
+                                    <p class="product-price">Rs 40 <span class="original-price">Rs 50</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-16">
+                                <img src="{{ url_for('static', filename='images/ginger.png') }}" alt="Ginger">
+                                <div class="product-info">
+                                    <p class="product-name">Fresh Ginger (200g)</p>
+                                    <p class="product-price">Rs 50</p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-17">
+                                <img src="{{ url_for('static', filename='images/celery.png') }}" alt="Celery">
+                                <div class="product-info">
+                                    <p class="product-name">Celery (1 bunch)</p>
+                                    <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-18">
+                                <img src="{{ url_for('static', filename='images/raspberry.png') }}" alt="Raspberry">
+                                <div class="product-info">
+                                    <p class="product-name">Raspberries (250g)</p>
+                                    <p class="product-price">Rs 220 <span class="original-price">Rs 270</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/almond-milk.png') }}" alt="Almond Milk">
-                            <div class="product-info">
-                                <p class="product-name">Almond Milk (1L)</p>
-                                <p class="product-price">Rs 150</p>
+                        
+                        <!-- Slide 4: More trending products -->
+                        <div class="featured-products-group">
+                            <div class="featured-product" id="product-19">
+                                <img src="{{ url_for('static', filename='images/mango.png') }}" alt="Mango">
+                                <div class="product-info">
+                                    <p class="product-name">Mango (1kg)</p>
+                                    <p class="product-price">Rs 150 <span class="original-price">Rs 200</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-20">
+                                <img src="{{ url_for('static', filename='images/peach.png') }}" alt="Peach">
+                                <div class="product-info">
+                                    <p class="product-name">Peach (500g)</p>
+                                    <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-21">
+                                <img src="{{ url_for('static', filename='images/grapes.png') }}" alt="Grapes">
+                                <div class="product-info">
+                                    <p class="product-name">Grapes (250g)</p>
+                                    <p class="product-price">Rs 100 <span class="original-price">Rs 130</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-22">
+                                <img src="{{ url_for('static', filename='images/pineapple.png') }}" alt="Pineapple">
+                                <div class="product-info">
+                                    <p class="product-name">Pineapple (1 pcs)</p>
+                                    <p class="product-price">Rs 70 <span class="original-price">Rs 90</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-23">
+                                <img src="{{ url_for('static', filename='images/cucumber.png') }}" alt="Cucumber">
+                                <div class="product-info">
+                                    <p class="product-name">Cucumber (1 pcs)</p>
+                                    <p class="product-price">Rs 30 <span class="original-price">Rs 40</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-24">
+                                <img src="{{ url_for('static', filename='images/cabbage.png') }}" alt="Cabbage">
+                                <div class="product-info">
+                                    <p class="product-name">Cabbage (1kg)</p>
+                                    <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="Kiwi">
-                            <div class="product-info">
-                                <p class="product-name">Kiwi (6 pcs)</p>
-                                <p class="product-price">Rs 90 <span class="original-price">Rs 120</span></p>
+                        
+                        <!-- Slide 5: Additional trending products -->
+                        <div class="featured-products-group">
+                            <div class="featured-product" id="product-25">
+                                <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
+                                <div class="product-info">
+                                    <p class="product-name">Condiments (200g)</p>
+                                    <p class="product-price">Rs 150 <span class="original-price">Rs 180</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-26">
+                                <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
+                                <div class="product-info">
+                                    <p class="product-name">Dairy Products (1L)</p>
+                                    <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-27">
+                                <img src="{{ url_for('static', filename='images/Dessert.png') }}" alt="Dessert">
+                                <div class="product-info">
+                                    <p class="product-name">Dessert (500g)</p>
+                                    <p class="product-price">Rs 250 <span class="original-price">Rs 300</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-28">
+                                <img src="{{ url_for('static', filename='images/fish.png') }}" alt="Fish">
+                                <div class="product-info">
+                                    <p class="product-name">Fresh Fish (1kg)</p>
+                                    <p class="product-price">Rs 400 <span class="original-price">Rs 500</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-29">
+                                <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
+                                <div class="product-info">
+                                    <p class="product-name">Frozen Foods (1kg)</p>
+                                    <p class="product-price">Rs 350 <span class="original-price">Rs 450</span></p>
+                                </div>
+                            </div>
+                            <div class="featured-product" id="product-30">
+                                <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
+                                <div class="product-info">
+                                    <p class="product-name">Mixed Fruits (1kg)</p>
+                                    <p class="product-price">Rs 150 <span class="original-price">Rs 200</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/quinoa.png') }}" alt="Quinoa">
-                            <div class="product-info">
-                                <p class="product-name">Quinoa (500g)</p>
-                                <p class="product-price">Rs 200 <span class="original-price">Rs 250</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 2: More trending products -->
-                    <div class="featured-products-group">
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/chia-seeds.png') }}" alt="Chia Seeds">
-                            <div class="product-info">
-                                <p class="product-name">Chia Seeds (200g)</p>
-                                <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/coconut-water.png') }}" alt="Coconut Water">
-                            <div class="product-info">
-                                <p class="product-name">Coconut Water (500ml)</p>
-                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/spinach.png') }}" alt="Spinach">
-                            <div class="product-info">
-                                <p class="product-name">Spinach (1kg)</p>
-                                <p class="product-price">Rs 50 <span class="original-price">Rs 70</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/tofu.png') }}" alt="Tofu">
-                            <div class="product-info">
-                                <p class="product-name">Tofu (250g)</p>
-                                <p class="product-price">Rs 90 <span class="original-price">Rs 120</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/matcha.png') }}" alt="Matcha">
-                            <div class="product-info">
-                                <p class="product-name">Matcha Powder (100g)</p>
-                                <p class="product-price">Rs 300 <span class="original-price">Rs 350</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/dragon-fruit.png') }}" alt="Dragon Fruit">
-                            <div class="product-info">
-                                <p class="product-name">Dragon Fruit</p>
-                                <p class="product-price">Rs 250</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3: Additional trending products -->
-                    <div class="featured-products-group">
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/pumpkin.png') }}" alt="Pumpkin">
-                            <div class="product-info">
-                                <p class="product-name">Pumpkin (1kg)</p>
-                                <p class="product-price">Rs 80 <span class="original-price">Rs 100</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/turmeric.png') }}" alt="Turmeric">
-                            <div class="product-info">
-                                <p class="product-name">Fresh Turmeric (100g)</p>
-                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/lemongrass.png') }}" alt="Lemongrass">
-                            <div class="product-info">
-                                <p class="product-name">Lemongrass (100g)</p>
-                                <p class="product-price">Rs 40 <span class="original-price">Rs 50</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/ginger.png') }}" alt="Ginger">
-                            <div class="product-info">
-                                <p class="product-name">Fresh Ginger (200g)</p>
-                                <p class="product-price">Rs 50</p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/celery.png') }}" alt="Celery">
-                            <div class="product-info">
-                                <p class="product-name">Celery (1 bunch)</p>
-                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/raspberry.png') }}" alt="Raspberry">
-                            <div class="product-info">
-                                <p class="product-name">Raspberries (250g)</p>
-                                <p class="product-price">Rs 220 <span class="original-price">Rs 270</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 4: More trending products -->
-                    <div class="featured-products-group">
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/mango.png') }}" alt="Mango">
-                            <div class="product-info">
-                                <p class="product-name">Mango (1kg)</p>
-                                <p class="product-price">Rs 150 <span class="original-price">Rs 200</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/peach.png') }}" alt="Peach">
-                            <div class="product-info">
-                                <p class="product-name">Peach (500g)</p>
-                                <p class="product-price">Rs 120 <span class="original-price">Rs 150</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/grapes.png') }}" alt="Grapes">
-                            <div class="product-info">
-                                <p class="product-name">Grapes (250g)</p>
-                                <p class="product-price">Rs 100 <span class="original-price">Rs 130</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/pineapple.png') }}" alt="Pineapple">
-                            <div class="product-info">
-                                <p class="product-name">Pineapple (1 pcs)</p>
-                                <p class="product-price">Rs 70 <span class="original-price">Rs 90</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/cucumber.png') }}" alt="Cucumber">
-                            <div class="product-info">
-                                <p class="product-name">Cucumber (1 pcs)</p>
-                                <p class="product-price">Rs 30 <span class="original-price">Rs 40</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/cabbage.png') }}" alt="Cabbage">
-                            <div class="product-info">
-                                <p class="product-name">Cabbage (1kg)</p>
-                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 5: Additional trending products -->
-                    <div class="featured-products-group">
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/condiments.png') }}" alt="Condiments">
-                            <div class="product-info">
-                                <p class="product-name">Condiments (200g)</p>
-                                <p class="product-price">Rs 150 <span class="original-price">Rs 180</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/dairy.png') }}" alt="Dairy">
-                            <div class="product-info">
-                                <p class="product-name">Dairy Products (1L)</p>
-                                <p class="product-price">Rs 60 <span class="original-price">Rs 80</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/Dessert.png') }}" alt="Dessert">
-                            <div class="product-info">
-                                <p class="product-name">Dessert (500g)</p>
-                                <p class="product-price">Rs 250 <span class="original-price">Rs 300</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/fish.png') }}" alt="Fish">
-                            <div class="product-info">
-                                <p class="product-name">Fresh Fish (1kg)</p>
-                                <p class="product-price">Rs 400 <span class="original-price">Rs 500</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/frozen_foods.png') }}" alt="Frozen Foods">
-                            <div class="product-info">
-                                <p class="product-name">Frozen Foods (1kg)</p>
-                                <p class="product-price">Rs 350 <span class="original-price">Rs 450</span></p>
-                            </div>
-                        </div>
-                        <div class="featured-product">
-                            <img src="{{ url_for('static', filename='images/fruits.png') }}" alt="Fruits">
-                            <div class="product-info">
-                                <p class="product-name">Mixed Fruits (1kg)</p>
-                                <p class="product-price">Rs 150 <span class="original-price">Rs 200</span></p>
-                            </div>
-                        </div>
-                    </div>
+                        
 
 
+                    </div>
+                </div>
+                <button class="next">&#10095;</button> <!-- Next button -->
+                <div class="pagination-dots">
+                    <!-- Dots will be added dynamically by JavaScript -->
                 </div>
             </div>
-            <button class="next">&#10095;</button> <!-- Next button -->
-            <div class="pagination-dots">
-                <!-- Dots will be added dynamically by JavaScript -->
-            </div>
         </div>
-    </div>
     
     
     
@@ -571,157 +583,157 @@
 
 
     <!-- Product Grids -->
-    <div class="product-title-grid-spacing">
-        <h2 class="section-title">Trending Products</h2>
-        <div class="product-grid">
-    
-            <!-- Product: Juicy Red Apples -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/apple.png') }}" alt="Apple">
-                    <div class="discount">-20%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="apple"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="apple"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Juicy Red Apples</div>
-                    <div class="price">Rs 90.00 <span class="original-price">Rs 112.50</span></div>
+<div class="product-title-grid-spacing">
+    <h2 class="section-title">Trending Products</h2>
+    <div class="product-grid">
+
+        <!-- Product: Juicy Red Apples -->
+        <div class="product-card-container" id="product-31">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/apple.png') }}" alt="Apple">
+                <div class="discount">-20%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
                 </div>
             </div>
-    
-            <!-- Product: Exotic Fresh Coconuts -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/coconut.png') }}" alt="Coconut">
-                    <div class="discount">-15%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="coconut"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="coconut"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Exotic Fresh Coconuts</div>
-                    <div class="price">Rs 260.00 <span class="original-price">Rs 305.00</span></div>
-                </div>
+            <div class="product-details">
+                <div class="name">Juicy Red Apples</div>
+                <div class="price">Rs 90.00 <span class="original-price">Rs 112.50</span></div>
             </div>
-    
-            <!-- Product: Sweet Seedless Grapes -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/grapes.png') }}" alt="Grapes">
-                    <div class="discount">-10%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="grapes"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="grapes"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Sweet Seedless Grapes</div>
-                    <div class="price">Rs 225.00 <span class="original-price">Rs 250.00</span></div>
-                </div>
-            </div>
-    
-            <!-- Product: Tropical Ripe Guavas -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/guava.png') }}" alt="Guava">
-                    <div class="discount">-25%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="guava"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="guava"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Tropical Ripe Guavas</div>
-                    <div class="price">Rs 320.00 <span class="original-price">Rs 425.00</span></div>
-                </div>
-            </div>
-    
-            <!-- Product: Succulent Fresh Shrimp -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/shrimp.png') }}" alt="Shrimp">
-                    <div class="discount">-25%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="shrimp"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="shrimp"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Succulent Fresh Shrimp</div>
-                    <div class="price">Rs 750.00 <span class="original-price">Rs 1,000.00</span></div>
-                </div>
-            </div>
-    
-            <!-- Product: Premium Fresh Fish -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/fish.png') }}" alt="Fish">
-                    <div class="discount">-25%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="fish"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="fish"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Premium Fresh Fish</div>
-                    <div class="price">Rs 900.00 <span class="original-price">Rs 1,200.00</span></div>
-                </div>
-            </div>
-    
-            <!-- Product: Tender Chicken Breast -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/chicken.png') }}" alt="Chicken">
-                    <div class="discount">-25%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="chicken"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="chicken"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Tender Chicken Breast</div>
-                    <div class="price">Rs 600.00 <span class="original-price">Rs 800.00</span></div>
-                </div>
-            </div>
-    
-            <!-- Product: Flavorful Mutton Chops -->
-            <div class="product-card-container">
-                <div class="product-card">
-                    <img src="{{ url_for('static', filename='images/mutton.png') }}" alt="Mutton">
-                    <div class="discount">-25%</div>
-                    <!-- Icons container -->
-                    <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="mutton"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="mutton"></i> <!-- Added data-product-id -->
-                        <i class="fas fa-eye"></i>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="name">Flavorful Mutton Chops</div>
-                    <div class="price">Rs 1,200.00 <span class="original-price">Rs 1,600.00</span></div>
-                </div>
-            </div>
-    
         </div>
+
+        <!-- Product: Exotic Fresh Coconuts -->
+        <div class="product-card-container" id="product-32">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/coconut.png') }}" alt="Coconut">
+                <div class="discount">-15%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Exotic Fresh Coconuts</div>
+                <div class="price">Rs 260.00 <span class="original-price">Rs 305.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Sweet Seedless Grapes -->
+        <div class="product-card-container" id="product-33">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/grapes.png') }}" alt="Grapes">
+                <div class="discount">-10%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Sweet Seedless Grapes</div>
+                <div class="price">Rs 225.00 <span class="original-price">Rs 250.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Tropical Ripe Guavas -->
+        <div class="product-card-container" id="product-34">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/guava.png') }}" alt="Guava">
+                <div class="discount">-25%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Tropical Ripe Guavas</div>
+                <div class="price">Rs 320.00 <span class="original-price">Rs 425.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Succulent Fresh Shrimp -->
+        <div class="product-card-container" id="product-35">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/shrimp.png') }}" alt="Shrimp">
+                <div class="discount">-25%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Succulent Fresh Shrimp</div>
+                <div class="price">Rs 750.00 <span class="original-price">Rs 1,000.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Premium Fresh Fish -->
+        <div class="product-card-container" id="product-36">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/fish.png') }}" alt="Fish">
+                <div class="discount">-25%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Premium Fresh Fish</div>
+                <div class="price">Rs 900.00 <span class="original-price">Rs 1,200.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Tender Chicken Breast -->
+        <div class="product-card-container" id="product-37">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/chicken.png') }}" alt="Chicken">
+                <div class="discount">-25%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Tender Chicken Breast</div>
+                <div class="price">Rs 600.00 <span class="original-price">Rs 800.00</span></div>
+            </div>
+        </div>
+
+        <!-- Product: Flavorful Mutton Chops -->
+        <div class="product-card-container" id="product-38">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/mutton.png') }}" alt="Mutton">
+                <div class="discount">-25%</div>
+                <!-- Icons container -->
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name">Flavorful Mutton Chops</div>
+                <div class="price">Rs 1,200.00 <span class="original-price">Rs 1,600.00</span></div>
+            </div>
+        </div>
+
     </div>
-    
+</div>
+
     
 
     
@@ -730,14 +742,14 @@
         <h2 class="section-title">Fresh Arrivals</h2>
         <div class="product-grid">
             <!-- Product: Creamy Avocados -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-39">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/avocado.png') }}" alt="Avocado">
                     <div class="discount">-20%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="avocado"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="avocado"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -748,14 +760,14 @@
             </div>
     
             <!-- Product: Tropical Pineapples -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-40">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/pineapple.png') }}" alt="Pineapple">
                     <div class="discount">-15%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="pineapple"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="pineapple"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -766,14 +778,14 @@
             </div>
     
             <!-- Product: Fresh Peaches -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-41">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/peach.png') }}" alt="Peach">
                     <div class="discount">-10%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="peach"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="peach"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -784,14 +796,14 @@
             </div>
     
             <!-- Product: Zesty Kiwis -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-42">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="Kiwi">
                     <div class="discount">-25%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="kiwi"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="kiwi"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -802,14 +814,14 @@
             </div>
     
             <!-- Product: Fresh Mussels -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-43">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/mussel.png') }}" alt="Mussel">
                     <div class="discount">-25%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="mussel"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="mussel"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -820,14 +832,14 @@
             </div>
     
             <!-- Product: Rich Dark Chocolate -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-44">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/chocolate.png') }}" alt="Chocolate">
                     <div class="discount">-25%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="chocolate"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="chocolate"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -838,14 +850,14 @@
             </div>
     
             <!-- Product: Crunchy Almonds -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-45">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/almond.png') }}" alt="Almond">
                     <div class="discount">-25%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="almond"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="almond"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -856,14 +868,14 @@
             </div>
     
             <!-- Product: Sweet Bananas -->
-            <div class="product-card-container">
+            <div class="product-card-container" id="product-46">
                 <div class="product-card">
                     <img src="{{ url_for('static', filename='images/banana.png') }}" alt="Banana">
                     <div class="discount">-25%</div>
                     <!-- Icons container -->
                     <div class="icon-container">
-                        <i class="fas fa-heart" data-product-id="banana"></i>
-                        <i class="fas fa-shopping-cart" data-product-id="banana"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <i class="fas fa-eye"></i>
                     </div>
                 </div>
@@ -874,6 +886,7 @@
             </div>
         </div>
     </div>
+    
     
 
 <!-- Product Detail Widget -->
@@ -1003,7 +1016,7 @@
         <div class="footer-container">
             <div class="footer-logo-section footer-column">
                 <h1 class="footer-logo-text">
-                    Leef<span class="highlight-d">d</span>rix 
+                    Feel<span class="highlight-d">d</span>rix 
                     <i class="fas fa-leaf"></i>
                 </h1>
                 <p class="footer-description">Tortor neque egestas augue, eu vulputate magna eros eu erat.</p>

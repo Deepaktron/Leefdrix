@@ -557,6 +557,33 @@ h1 i {
     background-color: #E64A19; /* Darken color on hover */
 }
 
+/* Pagination Dots */
+.pagination-dots {
+    text-align: center; /* Center the dots */
+    margin-top: 40px;   /* Space between carousel and dots */
+    position: absolute; /* Position relative to the carousel */
+    bottom: 0px;       /* Adjust position below the carousel */
+    left: 50%;          /* Center align the dots horizontally */
+    transform: translateX(-50%); /* Adjust centering properly */
+    z-index: 10;        /* Ensure dots are above the carousel */
+}
+
+.dot {
+    height: 5px;       /* Slightly smaller dot */
+    width: 5px;
+    margin: 0 5px;      /* Space between the dots */
+    border-radius: 50%;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;    /* Make the dots clickable */
+}
+
+.dot.active {
+    background-color: #FF5722; /* Active dot color */
+    height: 6px;       /* Slightly smaller dot */
+    width: 6px;
+}
 
 
 
@@ -1183,6 +1210,29 @@ button.prev {
 button.next {
     right: 0;
 }
+.featured-pagination-dots {
+    display: flex;
+    justify-content: center; /* Center the dots */
+    margin-top: 10px; /* Space between slides and dots */
+}
+
+.featured-pagination-dots span {
+    width: 5px;
+    height: 5px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc; /* Inactive dot color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.featured-pagination-dots span.active {
+    background-color: #FF5722; /* Active dot color */
+    width: 6px;
+    height: 6px;
+}
+
+
 
 
 

@@ -27,13 +27,12 @@ var swiper = new Swiper('.image-slider', {
 
 
 // Featured Product section sliding
-
 document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     const slide = document.querySelector('.featured-products-slide');
     const groups = document.querySelectorAll('.featured-products-group');
-    const paginationDots = document.querySelector('.pagination-dots');
+    const paginationDots = document.querySelector('.featured-pagination-dots'); // Updated class name
     let currentIndex = 0;
 
     // Create pagination dots
@@ -526,31 +525,58 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 });
+
 //--------------------------------------------------------------
 
 
-
-
+// shop by category sliding
 const carouselInner = document.getElementById('carousel-inner');
-    const prevButton = document.getElementById('prev-slide');
-    const nextButton = document.getElementById('next-slide');
+const prevButton = document.getElementById('prev-slide');
+const nextButton = document.getElementById('next-slide');
+const dots = document.querySelectorAll('.dot');
 
-    let currentSlide = 0;
+let currentSlide = 0;
 
-    // Next slide function
-    nextButton.addEventListener('click', function() {
-        if (currentSlide < 1) { // Since we only have 2 slides (0 and 1)
-            currentSlide++;
+// Update active dot based on current slide
+function updateActiveDot() {
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+// Next slide function
+nextButton.addEventListener('click', function() {
+    if (currentSlide < 1) { // 0 and 1 for two slides
+        currentSlide++;
+        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateActiveDot();
+    }
+});
+
+// Previous slide function
+prevButton.addEventListener('click', function() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateActiveDot();
+    }
+});
+
+// Handle dot clicks
+dots.forEach((dot) => {
+    dot.addEventListener('click', function() {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        if (slideIndex !== currentSlide) {
+            currentSlide = slideIndex;
             carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateActiveDot();
         }
     });
+});
 
-    // Previous slide function
-    prevButton.addEventListener('click', function() {
-        if (currentSlide > 0) { // Don't go below slide 0
-            currentSlide--;
-            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    });
+// Initialize the first dot as active
+updateActiveDot();
 
+
+//------------------------------------------------------------------------
 

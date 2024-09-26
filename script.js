@@ -166,8 +166,9 @@ const products = {
         image: 'static/images/matcha.png'
     },
     'product-12': {
-        name: "Dragon Fruit",
+        name: "Dragon Fruit (1 kg)",
         price: 250,
+        originalPrice:300,
         description: "Exotic and vibrant dragon fruit.",
         image: 'static/images/dragon-fruit.png'
     },
@@ -428,6 +429,9 @@ document.querySelectorAll('.featured-product').forEach(product => {
 
         // Show the widget
         document.getElementById('product-widget').style.display = 'block';
+
+        // Set initial quantity to 1
+        document.getElementById('quantity-input').value = 1;
     });
 });
 
@@ -449,8 +453,34 @@ document.querySelectorAll('.product-card-container').forEach(product => {
 
         // Show the widget
         document.getElementById('product-widget').style.display = 'block';
+
+        // Set initial quantity to 1
+        document.getElementById('quantity-input').value = 1;
     });
 });
+
+// Prevent multiple event listeners by checking if they have already been added
+if (!document.getElementById('increase-quantity').dataset.listenerAdded) {
+    // Event listener for quantity increment
+    document.getElementById('increase-quantity').addEventListener('click', function() {
+        let quantityInput = document.getElementById('quantity-input');
+        let currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1; // Increase the value by 1
+    });
+
+    // Event listener for quantity decrement
+    document.getElementById('decrease-quantity').addEventListener('click', function() {
+        let quantityInput = document.getElementById('quantity-input');
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1; // Decrease the value by 1, but not below 1
+        }
+    });
+
+    // Mark that listeners have been added to prevent duplicates
+    document.getElementById('increase-quantity').dataset.listenerAdded = true;
+    document.getElementById('decrease-quantity').dataset.listenerAdded = true;
+}
 
 // Close widget functionality
 document.getElementById('close-widget').addEventListener('click', function() {

@@ -1058,8 +1058,8 @@ h1 i {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 35px; /* Circular shape */
-    height: 35px;
+    width: 30px; /* Circular shape */
+    height: 30px;
     background: #f0f0f0; /* Light grey background */
     border: none;
     border-radius: 50%; /* Make it circular */
@@ -1096,6 +1096,13 @@ h1 i {
     margin-bottom: 15px; /* Adds vertical spacing */
 }
 
+/* Styling for the original price */
+.price .original-price {
+    font-size: 14px; /* Smaller font size */
+    color: grey; /* Optional: change the color to differentiate it */
+    margin-left: 5px; /* Small margin to separate from the main price */
+    text-decoration: none !important; /* Force no strikethrough */
+}
 
 
 

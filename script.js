@@ -112,6 +112,7 @@ const products = {
     'product-4': {
         name: "Almond Milk (1L)",
         price: 150,
+        originalPrice:190,
         description: "Creamy and dairy-free almond milk.",
         image: 'static/images/almond-milk.png'
     },
@@ -409,8 +410,7 @@ const products = {
     }
 };
 
-
-// Event listener for opening the widget
+// Event listener for opening the widget from the featured product section (without sizes)
 document.querySelectorAll('.featured-product').forEach(product => {
     product.addEventListener('click', function() {
         const productId = this.id; // Get the ID of the clicked product
@@ -418,28 +418,20 @@ document.querySelectorAll('.featured-product').forEach(product => {
 
         // Populate the widget
         document.getElementById('widget-product-name').textContent = productDetails.name;
-        document.getElementById('widget-product-price').textContent = `Rs ${productDetails.price} (Original Price: Rs ${productDetails.originalPrice})`;
+        document.getElementById('widget-product-price').innerHTML = `Rs. ${productDetails.price} <span class="original-price">(Original Price: Rs. ${productDetails.originalPrice})</span>`;
         document.getElementById('widget-product-description').textContent = productDetails.description;
         document.getElementById('widget-product-image').src = productDetails.image;
+        document.getElementById('widget-product-availability').textContent = productDetails.availability || 'In Stock'; // Set default availability
+
+        // Hide size options for featured products
+        document.querySelector('.size').style.display = 'none';
 
         // Show the widget
         document.getElementById('product-widget').style.display = 'block';
     });
 });
 
-// Close widget functionality
-document.getElementById('close-widget').addEventListener('click', function() {
-    document.getElementById('product-widget').style.display = 'none';
-});
-
-
-
-
-
-//--------------------------------------------------------
-// product grid cards
-
-// Event listener for opening the widget
+// Event listener for opening the widget from the product grid cards (with sizes)
 document.querySelectorAll('.product-card-container').forEach(product => {
     product.addEventListener('click', function() {
         const productId = this.id; // Get the ID of the clicked product
@@ -447,10 +439,13 @@ document.querySelectorAll('.product-card-container').forEach(product => {
 
         // Populate the widget
         document.getElementById('widget-product-name').textContent = productDetails.name;
-        document.getElementById('widget-product-price').textContent = `Rs ${productDetails.price} (Original Price: Rs ${productDetails.originalPrice})`;
+        document.getElementById('widget-product-price').innerHTML = `Rs. ${productDetails.price} <span class="original-price">(Original Price: Rs. ${productDetails.originalPrice})</span>`;
         document.getElementById('widget-product-description').textContent = productDetails.description;
         document.getElementById('widget-product-image').src = productDetails.image;
         document.getElementById('widget-product-availability').textContent = productDetails.availability || 'In Stock'; // Set default availability
+
+        // Show size options for product card containers
+        document.querySelector('.size').style.display = 'flex';
 
         // Show the widget
         document.getElementById('product-widget').style.display = 'block';
@@ -461,12 +456,6 @@ document.querySelectorAll('.product-card-container').forEach(product => {
 document.getElementById('close-widget').addEventListener('click', function() {
     document.getElementById('product-widget').style.display = 'none';
 });
-
-//----------------------------------------------------------------------------------
-
-
-
-
 
 
 

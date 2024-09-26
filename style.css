@@ -1086,11 +1086,14 @@ h1 i {
     box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Focus ring with bright red color */
 }
 
-/* Make the availability text green */
-.widget-details .availability span {
-    color: green;
+/* Availability text styling */
+.widget-details .availability .in-stock {
+    color: green; /* Text color for in stock */
 }
 
+.widget-details .availability .out-of-stock {
+    color: red; /* Text color for out of stock */
+}
 /* Add vertical spacing between size, quantity, and actions */
 .size, .quantity, .actions {
     margin-bottom: 15px; /* Adds vertical spacing */
@@ -1103,7 +1106,6 @@ h1 i {
     margin-left: 5px; /* Small margin to separate from the main price */
     text-decoration: none !important; /* Force no strikethrough */
 }
-
 
 
 

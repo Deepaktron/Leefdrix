@@ -87,329 +87,387 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// Product data
 const products = {
     'product-1': {
         name: "Avocado (500g)",
         price: 80,
         originalPrice: 120,
         description: "Fresh and creamy avocados.",
-        image: 'static/images/avocado.png'
+        image: 'static/images/avocado.png',
+        availability: "In Stock"
     },
     'product-2': {
         name: "Blueberries (250g)",
         price: 200,
         originalPrice: 250,
         description: "Sweet and juicy blueberries.",
-        image: 'static/images/blueberry.png'
+        image: 'static/images/blueberry.png',
+        availability: "Out of Stock"
     },
     'product-3': {
         name: "Sweet Potato (1kg)",
         price: 120,
         originalPrice: 150,
         description: "Nutritious and delicious sweet potatoes.",
-        image: 'static/images/sweet-potato.png'
+        image: 'static/images/sweet-potato.png',
+        availability: "Out of Stock"
     },
     'product-4': {
         name: "Almond Milk (1L)",
         price: 150,
-        originalPrice:190,
+        originalPrice: 190,
         description: "Creamy and dairy-free almond milk.",
-        image: 'static/images/almond-milk.png'
+        image: 'static/images/almond-milk.png',
+        availability: "In Stock"
     },
     'product-5': {
         name: "Kiwi (6 pcs)",
         price: 90,
         originalPrice: 120,
         description: "Tangy and sweet kiwis.",
-        image: 'static/images/kiwi.png'
+        image: 'static/images/kiwi.png',
+        availability: "Out of Stock"
     },
     'product-6': {
         name: "Quinoa (500g)",
         price: 200,
         originalPrice: 250,
         description: "High-protein and gluten-free quinoa.",
-        image: 'static/images/quinoa.png'
+        image: 'static/images/quinoa.png',
+        availability: "In Stock"
     },
     'product-7': {
         name: "Chia Seeds (200g)",
         price: 120,
         originalPrice: 150,
         description: "Nutritious chia seeds for a healthy diet.",
-        image: 'static/images/chia-seeds.png'
+        image: 'static/images/chia-seeds.png',
+        availability: "In Stock"
     },
     'product-8': {
         name: "Coconut Water (500ml)",
         price: 60,
         originalPrice: 80,
         description: "Refreshing coconut water.",
-        image: 'static/images/coconut-water.png'
+        image: 'static/images/coconut-water.png',
+        availability: "Out of Stock"
     },
     'product-9': {
         name: "Spinach (1kg)",
         price: 50,
         originalPrice: 70,
         description: "Fresh and healthy spinach.",
-        image: 'static/images/spinach.png'
+        image: 'static/images/spinach.png',
+        availability: "In Stock"
     },
     'product-10': {
         name: "Tofu (250g)",
         price: 90,
         originalPrice: 120,
         description: "Versatile and protein-rich tofu.",
-        image: 'static/images/tofu.png'
+        image: 'static/images/tofu.png',
+        availability: "In Stock"
     },
     'product-11': {
         name: "Matcha Powder (100g)",
         price: 300,
         originalPrice: 350,
         description: "Premium quality matcha powder.",
-        image: 'static/images/matcha.png'
+        image: 'static/images/matcha.png',
+        availability: "In Stock"
     },
     'product-12': {
         name: "Dragon Fruit (1 kg)",
         price: 250,
-        originalPrice:300,
+        originalPrice: 300,
         description: "Exotic and vibrant dragon fruit.",
-        image: 'static/images/dragon-fruit.png'
+        image: 'static/images/dragon-fruit.png',
+        availability: "In Stock"
     },
     'product-13': {
         name: "Pumpkin (1kg)",
         price: 80,
         originalPrice: 100,
         description: "Fresh and nutritious pumpkin.",
-        image: 'static/images/pumpkin.png'
+        image: 'static/images/pumpkin.png',
+        availability: "In Stock"
     },
     'product-14': {
         name: "Fresh Turmeric (100g)",
         price: 60,
         originalPrice: 80,
         description: "Healthy fresh turmeric.",
-        image: 'static/images/turmeric.png'
+        image: 'static/images/turmeric.png',
+        availability: "In Stock"
     },
     'product-15': {
         name: "Lemongrass (100g)",
         price: 40,
         originalPrice: 50,
         description: "Aromatic and flavorful lemongrass.",
-        image: 'static/images/lemongrass.png'
+        image: 'static/images/lemongrass.png',
+        availability: "In Stock"
     },
     'product-16': {
         name: "Fresh Ginger (200g)",
         price: 50,
         description: "Spicy and fresh ginger.",
-        image: 'static/images/ginger.png'
+        image: 'static/images/ginger.png',
+        availability: "In Stock"
     },
     'product-17': {
         name: "Celery (1 bunch)",
         price: 60,
         originalPrice: 80,
         description: "Crisp and fresh celery.",
-        image: 'static/images/celery.png'
+        image: 'static/images/celery.png',
+        availability: "In Stock"
     },
     'product-18': {
         name: "Raspberries (250g)",
         price: 220,
         originalPrice: 270,
         description: "Sweet and tangy raspberries.",
-        image: 'static/images/raspberry.png'
+        image: 'static/images/raspberry.png',
+        availability: "In Stock"
     },
     'product-19': {
         name: "Mango (1kg)",
         price: 150,
         originalPrice: 200,
         description: "Sweet and juicy mangoes.",
-        image: 'static/images/mango.png'
+        image: 'static/images/mango.png',
+        availability: "In Stock"
     },
     'product-20': {
         name: "Peach (500g)",
         price: 120,
         originalPrice: 150,
         description: "Fresh and juicy peaches.",
-        image: 'static/images/peach.png'
+        image: 'static/images/peach.png',
+        availability: "In Stock"
     },
     'product-21': {
         name: "Grapes (250g)",
         price: 100,
         originalPrice: 130,
         description: "Sweet and crunchy grapes.",
-        image: 'static/images/grapes.png'
+        image: 'static/images/grapes.png',
+        availability: "In Stock"
     },
     'product-22': {
         name: "Pineapple (1 pcs)",
         price: 70,
         originalPrice: 90,
         description: "Tropical and sweet pineapple.",
-        image: 'static/images/pineapple.png'
+        image: 'static/images/pineapple.png',
+        availability: "In Stock"
     },
     'product-23': {
         name: "Cucumber (1 pcs)",
         price: 30,
         originalPrice: 40,
         description: "Crisp and refreshing cucumber.",
-        image: 'static/images/cucumber.png'
+        image: 'static/images/cucumber.png',
+        availability: "In Stock"
     },
     'product-24': {
         name: "Cabbage (1kg)",
         price: 60,
         originalPrice: 80,
         description: "Fresh and crunchy cabbage.",
-        image: 'static/images/cabbage.png'
+        image: 'static/images/cabbage.png',
+        availability: "In Stock"
     },
     'product-25': {
         name: "Condiments (200g)",
         price: 150,
         originalPrice: 180,
         description: "A variety of flavorful condiments.",
-        image: 'static/images/condiments.png'
+        image: 'static/images/condiments.png',
+        availability: "In Stock"
     },
     'product-26': {
         name: "Dairy Products (1L)",
         price: 60,
         originalPrice: 80,
         description: "Fresh and creamy dairy products.",
-        image: 'static/images/dairy.png'
+        image: 'static/images/dairy.png',
+        availability: "In Stock"
     },
     'product-27': {
         name: "Dessert (500g)",
         price: 250,
         originalPrice: 300,
         description: "Delicious desserts for everyone.",
-        image: 'static/images/Dessert.png'
+        image: 'static/images/Dessert.png',
+        availability: "Out of Stock"
     },
     'product-28': {
         name: "Fresh Fish (1kg)",
         price: 400,
         originalPrice: 500,
         description: "Freshly caught fish.",
-        image: 'static/images/fish.png'
+        image: 'static/images/fish.png',
+        availability: "In Stock"
     },
     'product-29': {
         name: "Frozen Foods (1kg)",
         price: 350,
         originalPrice: 450,
         description: "A variety of frozen foods.",
-        image: 'static/images/frozen_foods.png'
+        image: 'static/images/frozen_foods.png',
+        availability: "In Stock"
     },
     'product-30': {
         name: "Mixed Fruits (1kg)",
         price: 150,
         originalPrice: 200,
         description: "A mix of fresh fruits.",
-        image: 'static/images/fruits.png'
+        image: 'static/images/fruits.png',
+        availability: "In Stock"
     },
     'product-31': {
         name: "Juicy Red Apples",
         price: 90,
         originalPrice: 112.50,
         description: "Fresh and juicy red apples.",
-        image: 'static/images/apple.png'
+        image: 'static/images/apple.png',
+        availability: "In Stock"
     },
     'product-32': {
         name: "Exotic Fresh Coconuts",
         price: 260,
         originalPrice: 305,
         description: "Fresh coconuts for a tropical taste.",
-        image: 'static/images/coconut.png'
+        image: 'static/images/coconut.png',
+        availability: "In Stock"
     },
     'product-33': {
         name: "Sweet Seedless Grapes",
         price: 225,
         originalPrice: 250,
         description: "Delicious and sweet seedless grapes.",
-        image: 'static/images/grapes.png'
+        image: 'static/images/grape.png',
+        availability: "Out of Stock"
     },
     'product-34': {
-        name: "Tropical Ripe Guavas",
-        price: 320,
-        originalPrice: 425,
-        description: "Ripe guavas packed with flavor.",
-        image: 'static/images/guava.png'
+        name: "Organic Carrots",
+        price: 70,
+        originalPrice: 90,
+        description: "Fresh and organic carrots.",
+        image: 'static/images/carrot.png',
+        availability: "In Stock"
     },
     'product-35': {
-        name: "Succulent Fresh Shrimp",
-        price: 750,
-        originalPrice: 1000,
-        description: "Fresh shrimp perfect for seafood dishes.",
-        image: 'static/images/shrimp.png'
+        name: "Ripe Avocados",
+        price: 150,
+        originalPrice: 180,
+        description: "Creamy and delicious ripe avocados.",
+        image: 'static/images/ripe-avocado.png',
+        availability: "In Stock"
     },
     'product-36': {
-        name: "Premium Fresh Fish",
-        price: 900,
-        originalPrice: 1200,
-        description: "High-quality fresh fish for grilling or frying.",
-        image: 'static/images/fish.png'
+        name: "Tropical Mangoes",
+        price: 120,
+        originalPrice: 150,
+        description: "Sweet and succulent mangoes.",
+        image: 'static/images/mangoes.png',
+        availability: "In Stock"
     },
     'product-37': {
-        name: "Tender Chicken Breast",
-        price: 600,
-        originalPrice: 800,
-        description: "Lean and tender chicken breast for healthy meals.",
-        image: 'static/images/chicken.png'
+        name: "Nutty Almonds",
+        price: 350,
+        originalPrice: 400,
+        description: "Nutritious and crunchy almonds.",
+        image: 'static/images/almond.png',
+        availability: "Out of Stock"
     },
     'product-38': {
-        name: "Flavorful Mutton Chops",
-        price: 1200,
-        originalPrice: 1600,
-        description: "Juicy mutton chops, perfect for grilling.",
-        image: 'static/images/mutton.png'
-    },
-    'product-39': {
-        name: "Creamy Avocados",
+        name: "Zesty Lemons",
         price: 80,
         originalPrice: 100,
-        description: "Rich and creamy avocados, perfect for salads.",
-        image: 'static/images/avocado.png'
+        description: "Fresh and zesty lemons.",
+        image: 'static/images/lemon.png',
+        availability: "In Stock"
+    },
+    'product-39': {
+        name: "Hearty Spinach",
+        price: 60,
+        originalPrice: 80,
+        description: "Fresh and healthy spinach.",
+        image: 'static/images/spinach-leaves.png',
+        availability: "In Stock"
     },
     'product-40': {
-        name: "Tropical Pineapples",
-        price: 170,
-        originalPrice: 200,
-        description: "Juicy and sweet tropical pineapples.",
-        image: 'static/images/pineapple.png'
+        name: "Flavorsome Bell Peppers",
+        price: 150,
+        originalPrice: 180,
+        description: "Colorful and flavorsome bell peppers.",
+        image: 'static/images/bell-pepper.png',
+        availability: "In Stock"
     },
     'product-41': {
-        name: "Fresh Peaches",
-        price: 135,
-        originalPrice: 150,
-        description: "Delicious and ripe peaches for your desserts.",
-        image: 'static/images/peach.png'
+        name: "Delicious Strawberries",
+        price: 250,
+        originalPrice: 300,
+        description: "Sweet and juicy strawberries.",
+        image: 'static/images/strawberry.png',
+        availability: "In Stock"
     },
     'product-42': {
-        name: "Zesty Kiwis",
-        price: 75,
-        originalPrice: 100,
-        description: "Tart and flavorful kiwis, great for snacking.",
-        image: 'static/images/kiwi.png'
+        name: "Savory Broccoli",
+        price: 90,
+        originalPrice: 110,
+        description: "Fresh and nutritious broccoli.",
+        image: 'static/images/broccoli.png',
+        availability: "Out of Stock"
     },
     'product-43': {
-        name: "Fresh Mussels",
-        price: 350,
-        originalPrice: 500,
-        description: "Freshly harvested mussels, ideal for seafood dishes.",
-        image: 'static/images/mussel.png'
+        name: "Sweet Peas",
+        price: 100,
+        originalPrice: 130,
+        description: "Sweet and crunchy peas.",
+        image: 'static/images/peas.png',
+        availability: "In Stock"
     },
     'product-44': {
-        name: "Rich Dark Chocolate",
-        price: 225,
-        originalPrice: 300,
-        description: "Indulgent dark chocolate, perfect for chocolate lovers.",
-        image: 'static/images/chocolate.png'
+        name: "Nutritious Oats",
+        price: 150,
+        originalPrice: 180,
+        description: "Healthy and nutritious oats.",
+        image: 'static/images/oats.png',
+        availability: "In Stock"
     },
     'product-45': {
-        name: "Crunchy Almonds",
-        price: 450,
-        originalPrice: 600,
-        description: "Healthy and crunchy almonds, a perfect snack.",
-        image: 'static/images/almond.png'
+        name: "Sweet Cherries",
+        price: 220,
+        originalPrice: 270,
+        description: "Fresh and sweet cherries.",
+        image: 'static/images/cherry.png',
+        availability: "In Stock"
     },
     'product-46': {
         name: "Sweet Bananas",
         price: 60,
         originalPrice: 80,
         description: "Fresh and sweet bananas, great for breakfast.",
-        image: 'static/images/banana.png'
+        image: 'static/images/banana.png',
+        availability: "In Stock"
     }
 };
+
+// Function to set the product availability
+function setAvailabilityText(availability) {
+    const availabilityElement = document.getElementById('widget-product-availability');
+    availabilityElement.textContent = availability; // Set text
+    if (availability === "In Stock") {
+        availabilityElement.className = "in-stock"; // Apply green class
+    } else {
+        availabilityElement.className = "out-of-stock"; // Apply red class
+    }
+}
 
 // Event listener for opening the widget from the featured product section (without sizes)
 document.querySelectorAll('.featured-product').forEach(product => {
@@ -422,7 +480,9 @@ document.querySelectorAll('.featured-product').forEach(product => {
         document.getElementById('widget-product-price').innerHTML = `Rs. ${productDetails.price} <span class="original-price">(Original Price: Rs. ${productDetails.originalPrice})</span>`;
         document.getElementById('widget-product-description').textContent = productDetails.description;
         document.getElementById('widget-product-image').src = productDetails.image;
-        document.getElementById('widget-product-availability').textContent = productDetails.availability || 'In Stock'; // Set default availability
+        
+        // Set availability text
+        setAvailabilityText(productDetails.availability);
 
         // Hide size options for featured products
         document.querySelector('.size').style.display = 'none';
@@ -446,7 +506,9 @@ document.querySelectorAll('.product-card-container').forEach(product => {
         document.getElementById('widget-product-price').innerHTML = `Rs. ${productDetails.price} <span class="original-price">(Original Price: Rs. ${productDetails.originalPrice})</span>`;
         document.getElementById('widget-product-description').textContent = productDetails.description;
         document.getElementById('widget-product-image').src = productDetails.image;
-        document.getElementById('widget-product-availability').textContent = productDetails.availability || 'In Stock'; // Set default availability
+        
+        // Set availability text
+        setAvailabilityText(productDetails.availability);
 
         // Show size options for product card containers
         document.querySelector('.size').style.display = 'flex';
